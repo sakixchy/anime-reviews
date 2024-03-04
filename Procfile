@@ -1,1 +1,1 @@
-web: gunicorn reviews.wsgi
+web: gunicorn anime_reviews_project.wsgi

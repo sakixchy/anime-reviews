@@ -10,6 +10,7 @@ class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
+    slug = models.SlugField(default='', max_length=100)
     content = models.TextField()
     rating = models.IntegerField()
     image = CloudinaryField()
@@ -23,6 +24,7 @@ class Review(models.Model):
 
 class Anime(models.Model):
     title = models.CharField(max_length=100)
+    slug = models.SlugField(default='', max_length=100)
     description = models.TextField()
     release_date = models.DateField()
     image = CloudinaryField()

@@ -6,3 +6,4 @@ from .models import Review
 
 class PostList(generic.ListView):
     model = Review
+    template_name = 'reviews/review_list.html'

@@ -1,11 +1,52 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends "base.html" %}
 
 {% block content %}
-{% for review in object_list %}
-<h2>{{review.title}}</h2>
-<img src="{{ review.image.url }}">
-<p>{{review.content}}</p>
-{% endfor %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Review Entries -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+             <div class="row justify-content-center">
+                {% for review in review_list %}
+                <div class="col-md-2 ">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <img class="card-img" src="{{ review.image.url }}"alt="Image">
+                                <div class="image-flash">
+                                    <p class="author">submitted by {{ review.user}}</p>
+                                </div>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ review.title }}</h2>
+                            </a>
+                            <hr/>
+                            <p class="card-text text-muted posted-time">{{ review.posted_time}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+              </div>
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+             
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
 {% endblock %}
-    

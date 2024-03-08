@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -10,10 +11,10 @@ class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    slug = models.SlugField(default='', max_length=100)
+    slug = models.SlugField(max_length=100, blank=True)
     content = models.TextField()
     rating = models.IntegerField()
-    image = CloudinaryField()
+    image = CloudinaryField(blank=False)
     public_id = models.CharField(max_length=100, default=0)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
@@ -26,14 +27,20 @@ class Review(models.Model):
     
     def __str__(self):
         return f"The title of Review is {self.title} | submitted by {self.user}"
+    
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class Anime(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(default='', max_length=100)
+    slug = models.SlugField(max_length=100, blank=True)
     description = models.TextField()
     release_date = models.DateField()
-    image = CloudinaryField()
+    image = CloudinaryField(blank=False)
     public_id = models.CharField(max_length=100, default=0)
 
     class Meta:
@@ -41,6 +48,11 @@ class Anime(models.Model):
     
     def __str__(self):
         return f"The title of Anime is {self.title}"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
     
 
 

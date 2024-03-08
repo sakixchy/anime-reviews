@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g+b5w^v&255n-2qyd)w+%h=b4&te6xzxaobpkrugnntd45qy-m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-sakixchy-animereviews-lwlsom4sozh.ws-eu108.gitpod.io', 
 '.herokuapp.com']
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'reviews',
     'bootstrap5',
 ]
@@ -139,9 +141,7 @@ STATIC_URL = 'static/'
 # CLOUDINARY IMPORT
 
 CLOUDINARY = {
-    'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'api_key': os.environ.get('CLOUDINARY_API_KEY'),
-    'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
+    'cloud_env_var': os.environ.get('CLOUDINARY_URL')
 }
 
 # Default primary key field type

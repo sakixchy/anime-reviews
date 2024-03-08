@@ -1,6 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %}
 {% for review in object_list %}
 <h2>{{review.title}}</h2>
 <img src="{{ review.image.url }}">
-<p>{{review.content}}</p>{%endfor%}
+<p>{{review.content}}</p>
+{% endfor %}
+{% endblock %}
     

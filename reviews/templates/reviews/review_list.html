@@ -1,0 +1,6 @@
+
+{% for review in object_list %}
+<h2>{{review.title}}</h2>
+<img src="{{ review.image.url }}">
+<p>{{review.content}}</p>{%endfor%}
+    

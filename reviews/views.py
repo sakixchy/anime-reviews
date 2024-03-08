@@ -5,5 +5,5 @@ from .models import Review
 # Create your views here.
 
 class PostList(generic.ListView):
-    model = Review
+    queryset = Review.objects.all()
     template_name = 'reviews/review_list.html'

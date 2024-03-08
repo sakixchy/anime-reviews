@@ -21,6 +21,12 @@ class Review(models.Model):
     updated_time = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
+    class Meta:
+        ordering = ["-posted_time"]
+    
+    def __str__(self):
+        return f"The title of Review is {self.title} | submitted by {self.user}"
+
 
 class Anime(models.Model):
     title = models.CharField(max_length=100)
@@ -29,6 +35,12 @@ class Anime(models.Model):
     release_date = models.DateField()
     image = CloudinaryField()
     public_id = models.CharField(max_length=100, default=0)
+
+    class Meta:
+        ordering = ["-release_date"]
+    
+    def __str__(self):
+        return f"The title of Anime is {self.title}"
     
 
 
@@ -40,4 +52,10 @@ class Comment(models.Model):
     posted_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    class Meta:
+        ordering = ["posted_time"]
+
+    def __str__(self):
+        return f"Comment {self.content} by {self.user_id}"
     

@@ -89,3 +89,29 @@ footer {
 .footer-color {
     background-color: rgb(74, 78, 119);
 }
+
+.review-title {
+    color: rgb(255, 255, 255);
+}
+
+.review-content {
+    color: rgb(255, 255, 255);
+    padding: 10px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    font-family: 'Lato', sans-serif;
+    
+}
+
+.comments-section {
+    color: rgb(255, 255, 255);
+}
+
+.review-user {
+    text-align: right;
+    color: rgb(255, 255, 255);
+    margin-right: 80px;
+    font-style: italic;
+    text-align: right;
+}
+

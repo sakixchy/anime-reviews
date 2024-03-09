@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ anime_title }}{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="review-title">{{ review.title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Image and Anime Rating -->
+            <div class="col-md-4">
+                <img src="{{ review.image.url }}" alt="{{ review.title }}" class="img-fluid mb-3" style="width: 300px; height: auto;">
+                <p>Anime Rating: {{ review.rating }}</p>
+            </div>
+            <!-- Review Content -->
+            <div class="col-md-8">
+                <p class="review-content">{{ review.content }}</p>
+                <p class="review-user">Submitted by: {{ review.user }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Comment Section -->
+            <div class="col-md-12">
+                <h2 class="comment-section">Comments</h2>
+              
+            </div>
+        </div>
+    </div>
+ 
+    {% endblock%}
+</body>
+</html>

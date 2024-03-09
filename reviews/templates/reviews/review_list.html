@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block head %}
+    {{ block.super }}
+    <title>{% block title %}Home - Anime Reviews {% endblock %}</title>
+    <!-- Link to Google Icons for Filter -->
+    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:filter_list:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
+
+    <!-- Link to Google Icons for Sort -->
+    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:sort:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
+{% endblock %}
+
+
 {% block content %}
 
 <div class="container-fluid">
@@ -7,10 +18,17 @@
 
         <!-- Review Entries -->
         <div class="col-12 mt-3 left">
-            <div class="row">
              <div class="row justify-content-center">
+                <div class="google-icons">
+                    <span class="material-symbols-outlined">
+                        sort
+                        </span>
+                        <span class="material-symbols-outlined">
+                            filter_alt
+                            </span>
+                </div>
                 {% for review in review_list %}
-                <div class="col-md-2 ">
+                <div class="col-md-4 mb-3">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -36,17 +54,7 @@
                 {% endfor %}
              
             </div>
-        </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
 
 {% endblock %}

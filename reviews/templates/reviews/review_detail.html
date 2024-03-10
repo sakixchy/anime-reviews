@@ -17,13 +17,15 @@
         <div class="row">
             <!-- Image and Anime Rating -->
             <div class="col-md-4">
-                <img src="{{ review.image.url }}" alt="{{ review.title }}" class="img-fluid mb-3" style="width: 300px; height: auto;">
+                <img src="{{ review.image.url }}" alt="{{ review.title }}" class="img-fluid mb-3 review-img">
                 <p>Anime Rating: {{ review.rating }}</p>
             </div>
             <!-- Review Content -->
             <div class="col-md-8">
                 <p class="review-content">{{ review.content }}</p>
-                <p class="review-user">Submitted by: {{ review.user }}</p>
+                <p class="review-info">
+                    <span class="submitted-date">Submitted Review - [{{ review.posted_time}}]</span>
+                    <span class="submitted-by">Submitted by: {{ review.user }}</span>
             </div>
         </div>
         <div class="row">

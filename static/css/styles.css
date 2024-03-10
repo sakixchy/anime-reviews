@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     
 }
+
+
 .nav-color {
     background-color: rgb(74, 78, 119);
 }
@@ -82,13 +84,13 @@ a {
 footer {
     position: fixed;
     bottom: 0;
+    height: 75px;
     width: 100%;
     color: rgb(255, 255, 255);
+    background-color: rgb(74, 78, 119);
+    padding-top: 25px;
 }
 
-.footer-color {
-    background-color: rgb(74, 78, 119);
-}
 
 .review-title {
     color: rgb(255, 255, 255);
@@ -107,11 +109,48 @@ footer {
     color: rgb(255, 255, 255);
 }
 
-.review-user {
-    text-align: right;
+.submitted-date, .submitted-by {
     color: rgb(255, 255, 255);
-    margin-right: 80px;
     font-style: italic;
-    text-align: right;
+    flex: 1;
+    font-size: 12px;
+}
+
+.review-img {
+    width: 300px;
+    height: auto; 
+    padding-left: 60px;
+   
+}
+
+
+.review-info {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.submitted-date {
+    text-align: center;
+    margin-left: 100px;
+}
+
+.submitted-by {
+    text-align: center;
+    margin-right: 100px;
+}
+
+
+
+@media (max-width: 768px) {
+    .submitted-date,
+    .submitted-by {
+        flex: 1 0 100%; 
+        text-align: center; 
+        margin: 0;
+
+    }
 }
 

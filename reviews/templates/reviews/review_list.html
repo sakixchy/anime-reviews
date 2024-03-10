@@ -33,9 +33,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <img class="card-img" src="{{ review.image.url }}"alt="Image">
-                                <div class="image-flash">
-                                    <p class="author">submitted by {{ review.user}}</p>
-                                </div>
+                                    <p class="user">submitted by {{ review.user}}</p>
                             </div>
                             <a href="{% url 'review_list' review.slug %}" class="review-link">
                                 <h2 class="card-title">{{ review.title }}</h2>

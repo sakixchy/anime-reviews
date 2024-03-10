@@ -77,6 +77,7 @@ a {
     color: rgb(0, 0, 0);
 }
 
+
 .posted-time {
     font-size: 12px;
 }
@@ -142,8 +143,25 @@ footer {
     margin-right: 100px;
 }
 
+.registration {
+    color: rgb(255  255 255);
+}
 
+.login {
+    color:rgb(255, 255, 255);
+}
 
+.registration-button {
+    color: rgb(0, 0, 0);
+    font-size: 200%;
+    background-color: rgb(255, 238, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 2px;
+    border-radius: 16px;
+    
+}
 @media (max-width: 768px) {
     .submitted-date,
     .submitted-by {

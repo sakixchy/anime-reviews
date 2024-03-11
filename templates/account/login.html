@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
+{% block title %}{% trans "Log In" %}{% endblock title %}
 
 {% block content %}
 <div class="container">
   <div class="row justify-content-center">
       <div class="col-md-6">
-          <h1 class="registration text-center">{% trans "Sign In" %}</h1>
+          <h1 class="registration text-center">{% trans "Log In" %}</h1>
           <p class="registration">{% blocktrans %}If you have not created an account yet, then please
           <a href="{{ signup_url }}" style="color: yellow;">sign up</a> first.{% endblocktrans %}</p>
           <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -20,7 +20,7 @@
             <div class="row" style="margin-bottom: 10px;">
             <a class="button" style="color: rgb(242, 242, 17);" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
             </div>
-            <button class="registration-button" type="submit">{% trans "Sign In" %}</button>
+            <button class="registration-button" type="submit">{% trans "Log In" %}</button>
           </form>
       </div>
     </div>

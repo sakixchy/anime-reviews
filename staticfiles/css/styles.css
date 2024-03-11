@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     
 }
+
+
 .nav-color {
     background-color: rgb(74, 78, 119);
 }
@@ -75,6 +77,7 @@ a {
     color: rgb(0, 0, 0);
 }
 
+
 .posted-time {
     font-size: 12px;
 }
@@ -82,10 +85,90 @@ a {
 footer {
     position: fixed;
     bottom: 0;
+    height: 75px;
     width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(74, 78, 119);
+    padding-top: 25px;
+}
+
+
+.review-title {
     color: rgb(255, 255, 255);
 }
 
-.footer-color {
-    background-color: rgb(74, 78, 119);
+.review-content {
+    color: rgb(255, 255, 255);
+    padding: 10px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    font-family: 'Lato', sans-serif;
+    
 }
+
+.comments-section {
+    color: rgb(255, 255, 255);
+}
+
+.submitted-date, .submitted-by {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    flex: 1;
+    font-size: 12px;
+}
+
+.review-img {
+    width: 300px;
+    height: auto; 
+    padding-left: 60px;
+   
+}
+
+
+.review-info {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.submitted-date {
+    text-align: center;
+    margin-left: 100px;
+}
+
+.submitted-by {
+    text-align: center;
+    margin-right: 100px;
+}
+
+.registration {
+    color: rgb(255  255 255);
+}
+
+.login {
+    color:rgb(255, 255, 255);
+}
+
+.registration-button {
+    color: rgb(0, 0, 0);
+    font-size: 200%;
+    background-color: rgb(255, 238, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 2px;
+    border-radius: 16px;
+    
+}
+@media (max-width: 768px) {
+    .submitted-date,
+    .submitted-by {
+        flex: 1 0 100%; 
+        text-align: center; 
+        margin: 0;
+
+    }
+}
+

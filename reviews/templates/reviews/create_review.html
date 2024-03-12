@@ -3,4 +3,19 @@
 
 {% block content %}
 <h1 style="color: white;">HElloo</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Review</title>
+</head>
+<body>
+    <h1>Create Review</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
 {% endblock %}

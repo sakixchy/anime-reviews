@@ -55,6 +55,8 @@ class Anime(models.Model):
         super().save(*args, **kwargs)
     
 
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)

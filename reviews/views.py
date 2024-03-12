@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
@@ -35,8 +36,8 @@ def create_review(request):
             else:
                 review.status = 0  
             review.save()
-            messages.success(request, 'Review submitted successfully!')
-            return redirect('review_detail', pk=review.pk) 
+            messages.success(request, 'Review submitted successfully! Awaiting approval.')
+            return redirect('home') 
     else:
         form = ReviewForm()
     return render(request, 'reviews/create_review.html', {'form': form})

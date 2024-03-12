@@ -15,3 +15,9 @@ def review_list(request, slug):
     review = get_object_or_404(Review, slug=slug)
     anime_title = review.title 
     return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title})
+
+def create_review(request):
+    return render(request, 'reviews/create_review.html')
+
+def my_reviews(request):
+    return render(request, 'reviews/my_reviews.html')

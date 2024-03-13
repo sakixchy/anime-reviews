@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
 
-
-{% block content %}
-<h1 style="color: white;">HElloo</h1>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Create Review</title>
+   <title>{% block title %}Create Review{% endblock %}</title>
 </head>
+{% block content %}
 <body>
-    <h1>Create Review</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm mx-auto d-block text-center">
+             <h1 style="color: rgb(255, 255, 255); margin-bottom: 80px;">Create Review</h1>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-6">
+                <form method="post" enctype="multipart/form-data" style="color: rgb(255, 255, 255);">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="registration-button" style="padding: 0px 10px 0px 10px;" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
 {% endblock %}

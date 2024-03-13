@@ -1,5 +1,55 @@
 {% extends 'base.html' %}
+
+<head>
+    <title>{% block title %}My Reviews{% endblock %}</title>
+</head>
 {% block content %}
 
-<h1 style="color: white;">Helloo</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <h1 style="color: white; text-align: center;">My Reviews</h1>
+             <div class="row justify-content-center">
+                <div class="google-icons">
+                    <span class="material-symbols-outlined">
+                        sort
+                        </span>
+                        <span class="material-symbols-outlined">
+                            filter_alt
+                        </span>
+                </div>
+             </div>
+             <div>
+                {% for review in review_list %}
+                {% if review.user == request.user %}
+                    <div class="col-md-4 mb-3">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <img class="card-img" src="{{ review.image.url }}" alt="Image">
+                                    <p class="user">submitted by {{ review.user }}</p>
+                                </div>
+                                <a href="{% url 'review_list' review.slug %}" class="review-link">
+                                    <h2 class="card-title">{{ review.title }}</h2>
+                                </a>
+                                <hr/>
+                                <p class="card-text text-muted posted-time">{{ review.posted_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                    </div>
+                    <div class="row">
+                    {% endif %}
+                {% endif %}
+                {% endfor %}  
+                {% if not review_list %}
+                    <p  style="color: white; text-align: center; font-size: 30px;">No reviews submitted yet.</p>
+                {% endif %}          
+             </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

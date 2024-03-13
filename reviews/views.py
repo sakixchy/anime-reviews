@@ -21,10 +21,6 @@ def review_list(request, slug):
 def create_review(request):
     return render(request, 'reviews/create_review.html')
 
-def my_reviews(request):
-    return render(request, 'reviews/my_reviews.html')
-
-
 def create_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
@@ -41,3 +37,11 @@ def create_review(request):
     else:
         form = ReviewForm()
     return render(request, 'reviews/create_review.html', {'form': form})
+
+def my_reviews(request):
+    if request.user.is_authenticated:
+        user_reviews = Review.objects.filter(user=request.user)
+    else:
+        user_reviews = None
+        
+    return render(request, 'reviews/my_reviews.html', {'review_list': user_reviews})

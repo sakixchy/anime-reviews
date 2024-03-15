@@ -13,7 +13,7 @@ class Review(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, blank=True)
     content = models.TextField()
-    rating = models.IntegerField()
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     image = CloudinaryField(blank=False)
     public_id = models.CharField(max_length=100, default=0)
     likes = models.IntegerField(default=0)

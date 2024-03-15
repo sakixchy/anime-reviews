@@ -18,7 +18,7 @@
             <!-- Image and Anime Rating -->
             <div class="col-md-4">
                 <img src="{{ review.image.url }}" alt="{{ review.title }}" class="img-fluid mb-3 review-img">
-                <p>Anime Rating: {{ review.rating }}</p>
+                <p style="color: white; font-size: 110%;">Anime Rating: {{ review.stars }} ({{ review.rating }}/5 stars)</p>
             </div>
             <!-- Review Content -->
             <div class="col-md-8">

@@ -16,6 +16,8 @@ def review_list(request, slug):
     queryset = Review.objects.filter(status=1)
     review = get_object_or_404(Review, slug=slug)
     anime_title = review.title 
+    review.stars = '★' * review.rating + '☆' * (5 - review.rating)
+
     return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title})
 
 def create_review(request):

@@ -172,3 +172,20 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+
+    .modal-body {
+        text-align: center; 
+        margin: 0 auto;
+      }
+
+    .modal-body a.btn {
+      margin-bottom: 10px; 
+      display: block;
+      max-width: 180px;
+    }
+  
+    .button-container {
+      text-align: center;
+    }
+  }

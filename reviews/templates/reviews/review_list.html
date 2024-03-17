@@ -6,9 +6,6 @@
     <title>{% block title %}Home - Anime Reviews {% endblock %}</title>
     <!-- Link to Google Icons for Filter -->
     <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:filter_list:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
-
-    <!-- Link to Google Icons for Sort -->
-    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:sort:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
 {% endblock %}
 
 
@@ -32,13 +29,11 @@
                           <h5 class="modal-title">Filter Anime Reviews</h5>
                           </button>
                         </div>
-                        <div class="modal-body">
-                          <p>
+                        <div class="modal-body" style="margin: 0 auto;">
                             <a href="{% url 'sort_reviews' sort_option='latest' %}" class="btn btn-warning">Sort by Latest</a>
                             <a href="{% url 'sort_reviews' sort_option='oldest' %}" class="btn btn-warning">Sort by Oldest</a>
                             <a href="{% url 'sort_reviews' sort_option='atoz' %}" class="btn btn-warning">A to Z</a>
                             <a href="{% url 'sort_reviews' sort_option='ztoa' %}" class="btn btn-warning">Z to A</a>
-                        </p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

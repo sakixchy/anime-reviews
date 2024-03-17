@@ -76,8 +76,21 @@
       </nav>
     </header>
     <main class="flex-shrink-0">
+     <div class="container mt-3 messages-container">
+        {% if messages %}
+            <div class="alert alert-success alert-dismissible text-center" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+      {% endif %}
+     </div>
         {% block content %}
         {% endblock %}
+     </div>
     </main>
     <footer>
         <div class="container text-center">

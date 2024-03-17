@@ -162,6 +162,23 @@ footer {
     border-radius: 16px;
     
 }
+
+.messages-container {
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.close {
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    font-size: 1.5rem;
+    position: absolute; 
+    top: 0; 
+    right: 0;
+    padding: 10px; 
+}
+
 @media (max-width: 768px) {
     .submitted-date,
     .submitted-by {

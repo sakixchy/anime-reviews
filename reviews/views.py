@@ -1,5 +1,5 @@
-from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Review
@@ -28,7 +28,8 @@ def create_review(request):
     return render(request, 'reviews/create_review.html')
 
 def create_review(request):
-    if request.method == 'POST':
+
+     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save(commit=False)
@@ -38,11 +39,11 @@ def create_review(request):
             else:
                 review.status = 0  
             review.save()
-            messages.success(request, 'Review submitted successfully! Awaiting approval.')
+            messages.success(request, 'Your review has been submitted and is awaiting approval. ｡◕ ‿ ◕｡')
             return redirect('home') 
-    else:
+     else:
         form = ReviewForm()
-    return render(request, 'reviews/create_review.html', {'form': form})
+     return render(request, 'reviews/create_review.html', {'form': form})
 
 def my_reviews(request):
     if request.user.is_authenticated:

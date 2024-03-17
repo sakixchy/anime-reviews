@@ -11,6 +11,9 @@ class PostList(generic.ListView):
     queryset = Review.objects.all()
     template_name = 'reviews/review_list.html'
 
+    def get_queryset(self):
+        return Review.objects.filter(status=1)
+
 def review_list(request, slug):
 
     queryset = Review.objects.filter(status=1)
@@ -19,6 +22,7 @@ def review_list(request, slug):
     review.stars = '★' * review.rating + '☆' * (5 - review.rating)
 
     return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title})
+
 
 def create_review(request):
     return render(request, 'reviews/create_review.html')

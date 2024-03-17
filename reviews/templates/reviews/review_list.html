@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
     {{ block.super }}
@@ -20,13 +21,31 @@
         <div class="col-12 mt-3 left">
              <div class="row justify-content-center">
                 <div class="google-icons">
-                    <span class="material-symbols-outlined">
-                        sort
-                        </span>
-                        <span class="material-symbols-outlined">
-                            filter_alt
-                            </span>
+                  <span class="material-symbols-outlined" style="font-size: 60px; cursor: pointer;" id="filterButton">
+                    filter_alt
+                  </span>
                 </div>
+                <div id="reviewModal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Filter Anime Reviews</h5>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>
+                            <a href="{% url 'sort_reviews' sort_option='latest' %}" class="btn btn-warning">Sort by Latest</a>
+                            <a href="{% url 'sort_reviews' sort_option='oldest' %}" class="btn btn-warning">Sort by Oldest</a>
+                            <a href="{% url 'sort_reviews' sort_option='atoz' %}" class="btn btn-warning">A to Z</a>
+                            <a href="{% url 'sort_reviews' sort_option='ztoa' %}" class="btn btn-warning">Z to A</a>
+                        </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 {% for review in review_list %}
                 <div class="col-md-4 mb-3">
                     <div class="card mb-4">
@@ -48,11 +67,12 @@
               </div>
             </div>
             <div class="row">
-                {% endif %}
-                {% endfor %}
+            {% endif %}
+            {% endfor %}
              
             </div>
     </div>
 </div>
+<script src="{% static 'js/script.js' %}"></script>
 
 {% endblock %}

@@ -10,6 +10,12 @@ body {
     
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 
 .nav-color {
     background-color: rgb(74, 78, 119);
@@ -83,7 +89,7 @@ a {
 }
 
 footer {
-    position: fixed;
+
     bottom: 0;
     height: 75px;
     width: 100%;

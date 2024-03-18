@@ -59,16 +59,17 @@ def my_reviews(request):
 def sort_reviews(request, sort_option):
 
     default_sort = '-posted_time'
+    queryset = Review.objects.filter(status=1)
 
     if sort_option == 'atoz':
-        sorted_reviews = Review.objects.all().order_by('title')
+        sorted_reviews = queryset.order_by('title')
     elif sort_option == 'ztoa':
-        sorted_reviews = Review.objects.all().order_by('-title')
+        sorted_reviews = queryset.order_by('-title')
     elif sort_option == 'latest':
-        sorted_reviews = Review.objects.all().order_by('-posted_time')
+        sorted_reviews = queryset.order_by('-posted_time')
     elif sort_option == 'oldest':
-        sorted_reviews = Review.objects.all().order_by('posted_time')
+        sorted_reviews = queryset.order_by('posted_time')
     else:
-        sorted_reviews = Review.objects.all().order_by(default_sort)
+        sorted_reviews = queryset.order_by(default_sort)
 
     return render(request, 'reviews/review_list.html', {'review_list': sorted_reviews})

@@ -43,30 +43,26 @@
                   </div>
                 {% for review in review_list %}
                 <div class="col-md-4 mb-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <img class="card-img" src="{{ review.image.url }}"alt="Image">
-                                    <p class="user">submitted by {{ review.user}}</p>
-                            </div>
-                            <a href="{% url 'review_list' review.slug %}" class="review-link">
-                                <h2 class="card-title">{{ review.title }}</h2>
-                            </a>
-                            <hr/>
-                            <p class="card-text text-muted posted-time">{{ review.posted_time}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-              </div>
+                  <div class="card mb-4">
+                      <div class="card-body">
+                          <div class="image-container">
+                              <img class="card-img" src="{{ review.image.url }}"alt="Image">
+                                  <p class="user">submitted by {{ review.user}}</p>
+                          </div>
+                          <a href="{% url 'review_list' review.slug %}" class="review-link">
+                              <h2 class="card-title">{{ review.title }}</h2>
+                          </a>
+                          <hr/>
+                          <p class="card-text text-muted posted-time">{{ review.posted_time}}
+                          </p>
+                      </div>
+                  </div>
+              </div>  
+              {% endfor %}
             </div>
-            <div class="row">
-            {% endif %}
-            {% endfor %}
-             
-            </div>
-    </div>
+          </div>
+      </div>
+  </div> 
 </div>
 <script src="{% static 'js/script.js' %}"></script>
 

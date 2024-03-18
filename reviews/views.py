@@ -47,11 +47,13 @@ def create_review(request):
 
 def my_reviews(request):
     if request.user.is_authenticated:
-        user_reviews = Review.objects.filter(user=request.user)
+        user_reviews = Review.objects.filter(user=request.user, status=1)
     else:
         user_reviews = None
         
     return render(request, 'reviews/my_reviews.html', {'review_list': user_reviews})
+
+
 
 
 def sort_reviews(request, sort_option):

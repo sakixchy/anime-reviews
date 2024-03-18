@@ -15,8 +15,6 @@
                         filter_alt
                     </span>
                 </div>
-             </div>
-             <div>
                 {% for review in review_list %}
                 {% if review.user == request.user %}
                     <div class="col-md-4 mb-3">
@@ -47,6 +45,5 @@
              </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

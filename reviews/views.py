@@ -5,6 +5,7 @@ from django.views import generic
 from .models import Review
 from .forms import ReviewForm
 
+
 # Create your views here.
 
 class PostList(generic.ListView):
@@ -23,9 +24,6 @@ def review_list(request, slug):
 
     return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title})
 
-
-def create_review(request):
-    return render(request, 'reviews/create_review.html')
 
 def create_review(request):
 
@@ -73,3 +71,18 @@ def sort_reviews(request, sort_option):
         sorted_reviews = queryset.order_by(default_sort)
 
     return render(request, 'reviews/review_list.html', {'review_list': sorted_reviews})
+
+
+def edit_review(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your review has been successfully updated.")
+            return redirect('review_list', slug=review.slug)  
+    else:
+        form = ReviewForm(instance=review)
+
+    return render(request, 'edit_review.html', {'form': form})

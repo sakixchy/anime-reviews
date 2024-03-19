@@ -29,8 +29,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-md-12 text-right">
-                    <a href="" class="btn btn-warning">Edit Review</a>
+                    {% if user.is_authenticated and review.user == user %}
+                    <a href="{% url 'edit_review' slug=review.slug %}" class="btn btn-warning">Edit Review</a>
                     <button type="submit" class="btn btn-danger">Delete Review</button>
+                    {% endif %}
                 </div>
             </div>
         </div>

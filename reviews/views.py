@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Review
-from .forms import ReviewForm
+from .models import Review, Comment
+from .forms import ReviewForm, CommentForm
 
 
 # Create your views here.
@@ -21,8 +21,9 @@ def review_list(request, slug):
     review = get_object_or_404(Review, slug=slug)
     anime_title = review.title 
     review.stars = '★' * review.rating + '☆' * (5 - review.rating)
+    comments = Comment.objects.filter(review=review)
 
-    return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title})
+    return render(request, 'reviews/review_detail.html', {'review': review,  'anime_title': anime_title, 'comments':comments})
 
 
 def create_review(request):
@@ -90,3 +91,17 @@ def delete_review(request, slug):
         return redirect('home') 
         
     return render(request, 'delete_review.html', {'review': review})
+
+def post_comment(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.review = review  
+            comment.user = request.user
+            comment.save()
+            return redirect('review_list', slug=slug)
+    else:
+        form = CommentForm()
+    return render(request, 'reviews/review_detail.html', {'review': review, 'form': form})

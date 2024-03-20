@@ -60,12 +60,12 @@ class Anime(models.Model):
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)
-    review_id = models.ForeignKey(Review, on_delete=models.CASCADE )
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    review = models.ForeignKey(Review, on_delete=models.CASCADE )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     posted_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
 
     class Meta:
         ordering = ["posted_time"]

@@ -53,10 +53,51 @@
         <div class="row">
             <!-- Comment Section -->
             <div class="col-md-12">
-                <h2 class="comment-section">Comments</h2>
-              
+                <h4 class="comment-section" style="color: white; margin-top: 20px;">Comment on this Review</h4>
+                {% if user.is_authenticated %}
+                <form action="{% url 'post_comment' slug=review.slug %}" method="post">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-control" style="margin-left: -20px; margin-right: 0;">
+                                    <textarea class="form-control" name="content" style="max-height: 600px; min-height: 100px; overflow: auto; resize: none;" 
+                                    placeholder="Write your comment here..."></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col" style="margin-left: -20px; margin-right: 0;"> 
+                                        <button type="submit" class="btn btn-warning" style="margin-top: 5px;">Post Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            
+                </form>
+            {% else %}
+                <p style="color: white;">Please <a style="color: yellow;" href="{url 'login' url}">log in</a> to post a comment.</p>
+            {% endif %}
             </div>
         </div>
+        <div class="col-lg-6">
+            <!-- Posted Comments -->
+        {% if comments %}
+        {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-header">
+                    <strong>{{ comment.user }}:</strong>
+                    <span class="comment-date">{{ comment.posted_time|date:"F j, Y" }}</span>
+                </div>
+                <div class="comment-body">
+                    <p>{{ comment.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+      {% else %}
+        <p>No comments yet.</p>
+    {% endif %}
+        </div>
+        
     </div>
     <script>
 

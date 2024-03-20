@@ -48,9 +48,6 @@ def my_reviews(request):
     user_reviews = Review.objects.filter(user=request.user)
     return render(request, 'reviews/my_reviews.html', {'review_list': user_reviews})
 
-
-
-
 def sort_reviews(request, sort_option):
 
     default_sort = '-posted_time'
@@ -89,6 +86,7 @@ def delete_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
     if request.method == 'POST':
         review.delete()
-        return redirect('home')  
+        messages.success(request, "The review has been successfully deleted.")
+        return redirect('home') 
         
     return render(request, 'delete_review.html', {'review': review})

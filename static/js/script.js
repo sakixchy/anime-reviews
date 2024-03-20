@@ -1,13 +1,4 @@
 const filterButton = document.getElementById('filterButton');
-const saveChanges = document.getElementById('saveChanges');
-const updateForm = document.getElementById('updateForm');
-
-
-saveChanges.addEventListener('click', function() {
-    if (updateForm) {
-        updateForm.submit();
-    }
-    });
 
 
 filterButton.addEventListener('click', function() {
@@ -16,4 +7,4 @@ filterButton.addEventListener('click', function() {
     let bootstrapModal = new bootstrap.Modal(modal);
         bootstrapModal.show();
     });
-    
+  

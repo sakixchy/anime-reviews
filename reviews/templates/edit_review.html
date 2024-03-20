@@ -14,7 +14,25 @@
             <div class="form-window">
                 <form method="POST" style="color: rgb(0, 0, 0);">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <div class="form-group">
+                        <label for="id_title" style="display: block;">Title:</label>
+                        {{ form.title }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_content" style="display: block;">Content:</label>
+                        {{ form.content }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_rating" style="display: block;">Rating:</label>
+                        {{ form.rating }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_image" style="display: block;">Image:</label>
+                        {% if form.instance.image %}
+                        <img src="{{ form.instance.image.url }}" alt="Existing Image" style="max-width: 75px; max-height: 75px;">
+                        {% endif %}
+                     
+                    </div>
                     <div class="text-center">
                         <button id="saveChanges" class="btn btn-warning" style="margin-top: 20px;" type="submit">Save Changes</button>
                     </div>

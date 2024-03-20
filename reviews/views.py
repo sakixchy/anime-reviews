@@ -43,12 +43,9 @@ def create_review(request):
         form = ReviewForm()
      return render(request, 'reviews/create_review.html', {'form': form})
 
+
 def my_reviews(request):
-    if request.user.is_authenticated:
-        user_reviews = Review.objects.filter(user=request.user, status=1)
-    else:
-        user_reviews = None
-        
+    user_reviews = Review.objects.filter(user=request.user)
     return render(request, 'reviews/my_reviews.html', {'review_list': user_reviews})
 
 

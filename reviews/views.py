@@ -94,14 +94,16 @@ def delete_review(request, slug):
 
 def post_comment(request, slug):
     review = get_object_or_404(Review, slug=slug)
+    comments = Comment.objects.filter(review=review).order_by('-posted_time')
+    
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.review = review  
             comment.user = request.user
-            comment.save()
-            return redirect('review_list', slug=slug)
+            comment.save()      
     else:
         form = CommentForm()
-    return render(request, 'reviews/review_detail.html', {'review': review, 'form': form})
+        comments = Comment.objects.filter(review=review).order_by('-posted_time')
+    return render(request, 'reviews/review_detail.html', {'review': review, 'form': form, 'comments': comments})

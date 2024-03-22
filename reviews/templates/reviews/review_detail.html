@@ -31,6 +31,39 @@
                     <span class="submitted-date">Submitted Review - [{{ review.posted_time}}]</span>
                     <span class="submitted-by">Submitted by: {{ review.user }}</span>
             </div>
+            {% if user.is_authenticated %}
+            <div class="like-dislike-container">
+                <form id="like-form" action="{% url 'like_review' slug=review.slug %}" method="post" style="display: inline-block;">
+                    {% csrf_token %}
+                    <button type="submit" class="dislike-button btn btn-warning" style="color: black;">
+                        <span class="material-symbols-outlined" style="color: black;">thumb_up</span>
+                        <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+                    </button>
+                </form>
+                <form id="dislike-form" action="{% url 'dislike_review' slug=review.slug %}" method="post" style="display: inline-block;">
+                    {% csrf_token %}
+                    <button type="submit" class="dislike-button btn btn-warning" style="color: black;">
+                        <span class="material-symbols-outlined" style="color: black;">thumb_down</span>
+                        <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+                    </button>
+                </form>
+            </div>
+        {% else %}
+        <div class="like-dislike-container">
+            <span class="like-container" style="color: white;">
+                <span class="material-symbols-outlined disabled-cursor">
+                  thumb_up
+                  </span>
+                <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+              </span>
+              <span class="dislike-container" style="color: white;">
+                <span class="material-symbols-outlined disabled-cursor">
+                  thumb_down
+                  </span>
+                  <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+                </span>
+            </div>
+        {% endif %}
             <div class="row mt-3">
                 <div class="col-md-12 text-right">
                     {% if user.is_authenticated and review.user == user %}

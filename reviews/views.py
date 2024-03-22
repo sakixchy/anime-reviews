@@ -114,4 +114,16 @@ def review_detail(request, slug):
     comments = Comment.objects.filter(review=review).order_by('posted_time')
 
     return render(request, 'reviews/review_detail.html', {'review': review, 'comments': comments})
+
+def like_review(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+    review.likes += 1
+    review.save()
+    return redirect('review_detail', slug=slug)
+
+def dislike_review(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+    review.dislikes += 1
+    review.save()
+    return redirect('review_detail', slug=slug)
         

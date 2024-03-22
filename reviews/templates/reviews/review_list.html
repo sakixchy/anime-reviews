@@ -44,7 +44,19 @@
                 {% for review in review_list %}
                 <div class="col-md-4 mb-3">
                   <div class="card mb-4">
-                      <div class="card-body">
+                      <div class="card-body">   
+                        <span class="like-container">
+                          <span class="material-symbols-outlined disabled-cursor">
+                            thumb_up
+                            </span>
+                          <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+                        </span>
+                        <span class="dislike-container">
+                          <span class="material-symbols-outlined disabled-cursor">
+                            thumb_down
+                            </span>
+                            <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+                          </span>
                           <div class="image-container">
                               <img class="card-img" src="{{ review.image.url }}"alt="Image">
                                   <p class="user">submitted by {{ review.user}}</p>

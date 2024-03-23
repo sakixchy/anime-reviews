@@ -136,18 +136,27 @@
     </div>
     <script>
 
-        const deleteButton = document.getElementById('deleteButton');
-        const deleteReviewModal = document.getElementById('deleteReviewModal');
+    const deleteButton = document.getElementById('deleteButton');
+    const deleteReviewModal = document.getElementById('deleteReviewModal');
 
   
-        deleteButton.addEventListener('click', function() {
-                deleteReviewModal.style.display = 'block';
+        if (deleteButton) {
+    deleteButton.addEventListener('click', function() {
+        if (deleteReviewModal) {
+            deleteReviewModal.style.display = 'block';
+        }
+    });
+}
+
+    const goBackButton = document.getElementById('goBackButton');
+    if (goBackButton) {
+        goBackButton.addEventListener('click', function() {
+            const modal = document.getElementById('deleteReviewModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
         });
-            
-        document.getElementById('goBackButton').addEventListener('click', function() {
-                document.getElementById('deleteReviewModal').style.display = 'none';
-            
-        });
+    }
 
             
     </script>

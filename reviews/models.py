@@ -5,7 +5,6 @@ from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
 
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
@@ -19,7 +18,6 @@ class Review(models.Model):
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
     posted_time = models.DateTimeField(auto_now_add=True)
-    updated_time = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:

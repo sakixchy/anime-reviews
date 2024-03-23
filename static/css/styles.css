@@ -55,6 +55,7 @@ main {
 .nav-link {
     white-space: nowrap; 
     color: rgb(255, 255, 255);
+    margin-top: 40px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -84,9 +85,11 @@ main {
     object-fit: cover;
 }
 
+
 .card-title {
     font-size: 18px;
     text-decoration: none;
+    color: white;
 }
 
 a {
@@ -211,13 +214,29 @@ footer {
     width: 100%; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .submitted-date,
     .submitted-by {
         flex: 1 0 100%; 
         text-align: center; 
         margin: 0;
 
+    }
+}
+
+
+@media (max-width: 991px) {
+    .nav-item {
+        
+        margin-top: -20px;
+        margin-bottom: -8px;
+        text-align: center;
+        border-bottom: 6px inset rgba(255, 255, 255, .2);
+
+    }
+
+    .nav-bar {
+        margin-bottom: -50px;
     }
 }
 
@@ -265,6 +284,7 @@ footer {
 .like-container, .dislike-container {
     display: inline-block;
     margin-right: 10px; 
+    color: white;
 }
 
 

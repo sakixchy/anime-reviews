@@ -54,7 +54,7 @@
                 {% for review in review_list %}
                 <div class="col-md-4 mb-3">
                   <div class="card mb-4">
-                      <div class="card-body">   
+                      <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">   
                         <span class="like-container">
                           <span class="material-symbols-outlined disabled-cursor">
                             thumb_up
@@ -69,9 +69,9 @@
                           </span>
                           <div class="image-container">
                             <a href="{% url 'review_detail' slug=review.slug %}">
-                              <img class="card-img" src="{{ review.image.url }}"alt="Image">
+                              <img class="card-img" src="{{ review.image.url }}" alt="Image">
                             </a>
-                                  <p class="user">submitted by {{ review.user}}</p>
+                                  <p class="user text-muted">submitted by {{ review.user}}</p>
                           </div>
                           <a href="{% url 'review_list' review.slug %}" class="review-link">
                               <h2 class="card-title">{{ review.title }}</h2>

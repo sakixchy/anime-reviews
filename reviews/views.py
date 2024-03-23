@@ -102,6 +102,7 @@ def post_comment(request, slug):
             comment.review = review  
             comment.user = request.user
             comment.save()
+            messages.success(request, "You have successfully commented on this review")
             return redirect('review_detail', slug=slug)
     else:
         form = CommentForm()
@@ -119,11 +120,13 @@ def like_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
     review.likes += 1
     review.save()
+    messages.success(request, "You have successfully liked this review.")
     return redirect('review_detail', slug=slug)
 
 def dislike_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
     review.dislikes += 1
     review.save()
+    messages.success(request, "You have successfully disliked this review.")
     return redirect('review_detail', slug=slug)
         

@@ -58,7 +58,9 @@
                             <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
                           </span>
                           <div class="image-container">
+                            <a href="{% url 'review_detail' slug=review.slug %}">
                               <img class="card-img" src="{{ review.image.url }}"alt="Image">
+                            </a>
                                   <p class="user">submitted by {{ review.user}}</p>
                           </div>
                           <a href="{% url 'review_list' review.slug %}" class="review-link">

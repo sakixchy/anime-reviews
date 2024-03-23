@@ -33,29 +33,6 @@ class Review(models.Model):
         super().save(*args, **kwargs)
 
 
-class Anime(models.Model):
-    title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, blank=True)
-    description = models.TextField()
-    release_date = models.DateField()
-    image = CloudinaryField(blank=False)
-    public_id = models.CharField(max_length=100, default=0)
-
-    class Meta:
-        ordering = ["-release_date"]
-    
-    def __str__(self):
-        return f"The title of Anime is {self.title}"
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
-    
-
-    def __str__(self):
-        return self.title
-
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)
     review = models.ForeignKey(Review, on_delete=models.CASCADE )

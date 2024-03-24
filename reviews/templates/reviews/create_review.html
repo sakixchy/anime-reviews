@@ -7,31 +7,39 @@
 
 <body>
     <div class="container-fluid">
+        <!-- Header Section -->
         <div class="row">
             <div class="col-sm mx-auto d-block text-center">
                 <h1 style="color: rgb(255, 255, 255); margin-bottom:80px;">Create Review</h1>
             </div>
         </div>
+        <!-- Form Section -->
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-6">
+                <!-- Review Form -->
                 <form method="post" enctype="multipart/form-data" style="color: rgb(255, 255, 255);">
                     {% csrf_token %}
+                    <!-- Title Field -->
                     <div class="form-group">
                         <label for="id_title" style="display: block; font-size: 20px;">Title:</label>
                         {{ form.title}}
                     </div>
+                    <!-- Content Field -->
                     <div class="form-group">
                         <label for="id_title" style="display: block; font-size: 20px;">Content:</label>
                         {{ form.content}}
                     </div>
+                    <!-- Rating Field -->
                     <div class="form-group">
                         <label for="id_title" style="display: block; font-size: 20px;">Rating:</label>
                         {{ form.rating}}
                     </div>
+                    <!-- Image Field -->
                     <div class="form-group">
                         <label for="id_image" style="display: block; font-size: 20px;">Image:</label>
                         {{ form.image}}
                     </div>
+                    <!-- Submit Button -->
                     <button class="registration-button" style="padding: 0px 10px 0px 10px; margin-left: 220px;"
                         type="submit">Submit</button>
                 </form>

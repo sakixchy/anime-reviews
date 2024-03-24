@@ -10,38 +10,41 @@
 {% endblock %}
 
 {% block content %}
+<!-- Main content block -->
 <div class="jumbotron jumbotron-fluid">
+  <!-- Hero section with image and welcoming message -->
   <img src="{% static 'images/hero-img.jpg' %}" alt="Hero Image" class="hero-image">
   <div class="container">
     <h1 class="display-4" style="font-family: 'Bangers'; color:white">Welcome to Anime Reviews</h1>
     <p class="lead" style="color: white;">Discover and review your favorite anime!</p>
+    <!-- Description of the website -->
     <p style="color: white;">Our platform provides a space for anime enthusiasts to share their thoughts,
       recommendations, and reviews with other anime watchers.<br>
       In order to review anime on our website and participate in discussions, you will need to create a user account.
       Registration is simple and free.</p>
+    <!-- Additional information for visitors -->
     <p style="color: white;">If you prefer not to register, you can still enjoy reading the reviews and exploring our
       extensive collection of anime titles. Dive into the world of anime and discover new favorites!</p>
     <hr style="color:white">
   </div>
 </div>
-
 <div class="container-fluid">
   <div class="row">
-
     <!-- Review Entries -->
     <div class="col-12 mt-3 left">
       <div class="row justify-content-center">
+        <!-- Filter button -->
         <div class="google-icons">
           <span class="material-symbols-outlined" style="font-size: 60px; cursor: pointer;" id="filterButton">
             filter_alt
           </span>
         </div>
+        <!-- Modal for filtering options -->
         <div id="reviewModal" class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Filter Anime Reviews</h5>
-                </button>
               </div>
               <div class="modal-body" style="margin: 0 auto;">
                 <a href="{% url 'sort_reviews' sort_option='latest' %}" class="btn btn-warning">Sort by Latest</a>
@@ -49,16 +52,19 @@
                 <a href="{% url 'sort_reviews' sort_option='atoz' %}" class="btn btn-warning">A to Z</a>
                 <a href="{% url 'sort_reviews' sort_option='ztoa' %}" class="btn btn-warning">Z to A</a>
               </div>
+              <!-- Close button for the modal -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
+        <!-- Loop through reviews and display them -->
         {% for review in review_list %}
         <div class="col-md-4 mb-3">
           <div class="card mb-4">
             <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">
+              <!-- Like and dislike counters -->
               <span class="like-container">
                 <span class="material-symbols-outlined disabled-cursor">
                   thumb_up
@@ -71,16 +77,20 @@
                 </span>
                 <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
               </span>
+              <!-- Image container with link to review detail -->
               <div class="image-container">
                 <a href="{% url 'review_detail' slug=review.slug %}">
                   <img class="card-img" src="{{ review.image.url }}" alt="Image">
                 </a>
+                <!-- User who submitted the review -->
                 <p class="user text-muted">submitted by {{ review.user}}</p>
               </div>
+              <!-- Link to review detail page -->
               <a href="{% url 'review_list' review.slug %}" class="review-link">
                 <h2 class="card-title">{{ review.title }}</h2>
               </a>
               <hr />
+              <!-- Posted time of the review -->
               <p class="card-text text-muted posted-time">{{ review.posted_time}}
               </p>
             </div>
@@ -92,6 +102,7 @@
   </div>
 </div>
 </div>
+<!-- Custom JavaScript -->
 <script src="{% static 'js/script.js' %}"></script>
 
 {% endblock %}

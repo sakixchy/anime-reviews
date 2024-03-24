@@ -12,6 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 col-md-6">
             <div class="form-window">
+                <!-- Form for editing the review -->
                 <form method="POST" style="color: rgb(0, 0, 0);">
                     {% csrf_token %}
                     <div class="form-group">
@@ -26,6 +27,7 @@
                         <label for="id_rating" style="display: block;">Rating:</label>
                         {{ form.rating }}
                     </div>
+                    <!-- Display existing image -->
                     <div class="form-group">
                         <label for="id_image" style="display: block;">Image:</label>
                         {% if form.instance.image %}
@@ -33,6 +35,7 @@
                             style="max-width: 75px; max-height: 75px;">
                         {% endif %}
                     </div>
+                    <!-- Button to save changes -->
                     <div class="text-center">
                         <button id="saveChanges" class="btn btn-warning" style="margin-top: 20px;" type="submit">Save
                             Changes</button>

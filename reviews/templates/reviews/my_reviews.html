@@ -6,15 +6,19 @@
 {% block content %}
 
 <div class="container-fluid">
+    <!-- Header Section -->
     <div class="row">
         <div class="col-12 mt-3 left">
             <h1 style="color: white; text-align: center; margin-bottom: 40px;">My Reviews</h1>
+            <!-- Review Cards Section -->
             <div class="row justify-content-center">
                 {% for review in review_list %}
+                 <!-- Check if the review belongs to the current user -->
                 {% if review.user == request.user %}
                 <div class="col-md-4 mb-3">
                     <div class="card mb-4">
                         <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">
+                            <!-- Like and Dislike Icons -->
                             <span class="like-container">
                                 <span class="material-symbols-outlined disabled-cursor">
                                     thumb_up
@@ -27,14 +31,17 @@
                                 </span>
                                 <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
                             </span>
+                            <!-- Review Image and User Info -->
                             <div class="image-container">
                                 <img class="card-img" src="{{ review.image.url }}" alt="Image">
                                 <p class="user text-muted">submitted by {{ review.user }}</p>
                             </div>
+                            <!-- Review Title with Link -->
                             <a href="{% url 'review_list' review.slug %}" class="review-link">
                                 <h2 class="card-title">{{ review.title }}</h2>
                             </a>
                             <hr />
+                            <!-- Posted Time of the Review -->
                             <p class="card-text text-muted posted-time">{{ review.posted_time }}</p>
                         </div>
                     </div>
@@ -42,6 +49,7 @@
                 {% endif %}
                 {% endfor %}
                 {% if not review_list %}
+                <!-- Display message if no reviews are submitted yet -->
                 <p style="color: white; text-align: center; font-size: 30px;">No reviews submitted yet.</p>
                 {% endif %}
             </div>

@@ -21,6 +21,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato:wght@100&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- Material Symbols Outlined Font -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet"
@@ -39,41 +40,52 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light nav-color">
             <div class="container-fluid">
+                <!-- Navbar Brand -->
                 <a class="navbar-brand" href="{% url 'home' %}">
                     <span class="logo">Anime</span>
                     <span class="logo-r">Reviews</span>
                 </a>
+                <!-- Navbar Toggler -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <!-- Home Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
                     </li>
+                    <!-- Conditional Links based on Authentication -->
                     {% if user.is_authenticated %}
+                    <!-- Logout Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white {% if request.path == logout_url %}active{% endif %}"
                             aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <!-- Create Review Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'create_review' %}">Create Review</a>
                     </li>
+                    <!-- My Reviews Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'my_reviews' %}">My Reviews</a>
                     </li>
                     {% else %}
+                    <!-- Register Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white {% if request.path == signup_url %}active{% endif %}"
                             aria-current="page" href="{% url 'account_signup' %}">Register</a>
                     </li>
+                    <!-- Login Link -->
                     <li class="nav-item">
                         <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}"
                             aria-current="page" href="{% url 'account_login' %}">Login</a>
@@ -83,30 +95,38 @@
             </div>
         </nav>
     </header>
+    <!-- Main Content -->
     <main class="flex-shrink-0">
         <div class="container mt-3 messages-container"
             style="z-index: 99; position: absolute; transform: translate(-50%, -50%); left: 50%;">
             {% if messages %}
+            <!-- Display Messages -->
             <div class="alert alert-success alert-dismissible text-center" role="alert">
                 {% for message in messages %}
                 {{ message }}
                 {% endfor %}
+                <!-- Close Button -->
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             {% endif %}
         </div>
+        <!-- Content Block -->
         {% block content %}
         {% endblock %}
         </div>
     </main>
+    <!-- Footer -->
     <footer>
         <div class="container text-center">
+            <!-- Copyright -->
             <p class="mb-0">&copy; 2024 sakixchy. All rights reserved.</p>
         </div>
     </footer>
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 

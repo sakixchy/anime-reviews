@@ -6,9 +6,6 @@ from .models import Review, Comment
 from .forms import ReviewForm, CommentForm
 
 
-# Create your views here.
-
-
 class PostList(generic.ListView):
     queryset = Review.objects.all()
     template_name = "reviews/review_list.html"
@@ -18,7 +15,7 @@ class PostList(generic.ListView):
 
 
 def review_list(request, slug):
-
+    # Retrieve the review based on the slug
     queryset = Review.objects.filter(status=1)
     review = get_object_or_404(Review, slug=slug)
     anime_title = review.title
@@ -33,7 +30,7 @@ def review_list(request, slug):
 
 
 def create_review(request):
-
+    # Handle creation of a new review
     if request.method == "POST":
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
@@ -55,12 +52,13 @@ def create_review(request):
 
 
 def my_reviews(request):
+    # Display reviews created by the logged-in user
     user_reviews = Review.objects.filter(user=request.user)
     return render(request, "reviews/my_reviews.html", {"review_list": user_reviews})
 
 
 def sort_reviews(request, sort_option):
-
+    # Sort reviews based on the provided sorting option
     default_sort = "-posted_time"
     queryset = Review.objects.filter(status=1)
 
@@ -79,6 +77,7 @@ def sort_reviews(request, sort_option):
 
 
 def edit_review(request, slug):
+    # Edit an existing review
     review = get_object_or_404(Review, slug=slug)
 
     if request.method == "POST":
@@ -94,6 +93,7 @@ def edit_review(request, slug):
 
 
 def delete_review(request, slug):
+     # Delete an existing review
     review = get_object_or_404(Review, slug=slug)
     if request.method == "POST":
         review.delete()
@@ -104,6 +104,7 @@ def delete_review(request, slug):
 
 
 def post_comment(request, slug):
+    # Post a comment on a review
     review = get_object_or_404(Review, slug=slug)
 
     if request.method == "POST":
@@ -127,6 +128,7 @@ def post_comment(request, slug):
 
 
 def review_detail(request, slug):
+    # Display details of a review including comments
     review = Review.objects.get(slug=slug)
     comments = Comment.objects.filter(review=review).order_by("posted_time")
 
@@ -136,6 +138,7 @@ def review_detail(request, slug):
 
 
 def like_review(request, slug):
+    # Increment the likes count for a review
     review = get_object_or_404(Review, slug=slug)
     review.likes += 1
     review.save()
@@ -144,6 +147,7 @@ def like_review(request, slug):
 
 
 def dislike_review(request, slug):
+    # Increment the dislikes count for a review
     review = get_object_or_404(Review, slug=slug)
     review.dislikes += 1
     review.save()

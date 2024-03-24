@@ -16,54 +16,89 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Anime',
+            name="Anime",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('slug', models.SlugField(blank=True, max_length=100)),
-                ('description', models.TextField()),
-                ('release_date', models.DateField()),
-                ('image', cloudinary.models.CloudinaryField(max_length=255)),
-                ('public_id', models.CharField(default=0, max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=100)),
+                ("slug", models.SlugField(blank=True, max_length=100)),
+                ("description", models.TextField()),
+                ("release_date", models.DateField()),
+                ("image", cloudinary.models.CloudinaryField(max_length=255)),
+                ("public_id", models.CharField(default=0, max_length=100)),
             ],
             options={
-                'ordering': ['-release_date'],
+                "ordering": ["-release_date"],
             },
         ),
         migrations.CreateModel(
-            name='Review',
+            name="Review",
             fields=[
-                ('review_id', models.AutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=100)),
-                ('slug', models.SlugField(blank=True, max_length=100)),
-                ('content', models.TextField()),
-                ('rating', models.IntegerField()),
-                ('image', cloudinary.models.CloudinaryField(max_length=255)),
-                ('public_id', models.CharField(default=0, max_length=100)),
-                ('likes', models.IntegerField(default=0)),
-                ('dislikes', models.IntegerField(default=0)),
-                ('posted_time', models.DateTimeField(auto_now_add=True)),
-                ('updated_time', models.DateTimeField(auto_now=True)),
-                ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("review_id", models.AutoField(primary_key=True, serialize=False)),
+                ("title", models.CharField(max_length=100)),
+                ("slug", models.SlugField(blank=True, max_length=100)),
+                ("content", models.TextField()),
+                ("rating", models.IntegerField()),
+                ("image", cloudinary.models.CloudinaryField(max_length=255)),
+                ("public_id", models.CharField(default=0, max_length=100)),
+                ("likes", models.IntegerField(default=0)),
+                ("dislikes", models.IntegerField(default=0)),
+                ("posted_time", models.DateTimeField(auto_now_add=True)),
+                ("updated_time", models.DateTimeField(auto_now=True)),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[(0, "Draft"), (1, "Published")], default=0
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'ordering': ['-posted_time'],
+                "ordering": ["-posted_time"],
             },
         ),
         migrations.CreateModel(
-            name='Comment',
+            name="Comment",
             fields=[
-                ('comment_id', models.AutoField(primary_key=True, serialize=False)),
-                ('content', models.TextField()),
-                ('posted_time', models.DateTimeField(auto_now_add=True)),
-                ('updated_time', models.DateTimeField(auto_now=True)),
-                ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
-                ('review_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='reviews.review')),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("comment_id", models.AutoField(primary_key=True, serialize=False)),
+                ("content", models.TextField()),
+                ("posted_time", models.DateTimeField(auto_now_add=True)),
+                ("updated_time", models.DateTimeField(auto_now=True)),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[(0, "Draft"), (1, "Published")], default=0
+                    ),
+                ),
+                (
+                    "review_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="reviews.review"
+                    ),
+                ),
+                (
+                    "user_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'ordering': ['posted_time'],
+                "ordering": ["posted_time"],
             },
         ),
     ]

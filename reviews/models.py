@@ -22,11 +22,10 @@ class Review(models.Model):
 
     class Meta:
         ordering = ["-posted_time"]
-    
+
     def __str__(self):
         return f"The title of Review is {self.title} | submitted by {self.user}"
-    
-    
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -35,7 +34,7 @@ class Review(models.Model):
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)
-    review = models.ForeignKey(Review, on_delete=models.CASCADE )
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     posted_time = models.DateTimeField(auto_now_add=True)
@@ -46,4 +45,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.content} by {self.user_id}"
-    

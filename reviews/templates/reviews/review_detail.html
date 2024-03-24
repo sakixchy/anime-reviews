@@ -13,10 +13,8 @@
 <body>
     {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="review-title">{{ review.title }}</h1>
-            </div>
+        <div class="row" style="text-align: center;">
+             <h1 class="review-title" style="margin: 30px 0px 30px 0px;" >{{ review.title }}</h1>
         </div>
         <div class="row">
             <!-- Image and Anime Rating -->
@@ -26,7 +24,7 @@
             </div>
             <!-- Review Content -->
             <div class="col-md-8">
-                <p class="review-content">{{ review.content }}</p>
+                <p class="review-content" style="font-size: 18px;">{{ review.content }}</p>
                 <p class="review-info">
                     <span class="submitted-date">Submitted Review - [{{ review.posted_time}}]</span>
                     <span class="submitted-by">Submitted by: {{ review.user }}</span>
@@ -129,7 +127,7 @@
             </div>
         {% endfor %}
       {% else %}
-        <p>No comments yet.</p>
+        <p style="color: white; margin-top: 30px; font-size: 20px;">No comments yet.</p>
     {% endif %}
         </div>
         

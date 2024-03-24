@@ -73,7 +73,7 @@
       </nav>
     </header>
     <main class="flex-shrink-0">
-     <div class="container mt-3 messages-container">
+     <div class="container mt-3 messages-container" style="z-index: 99; position: absolute; transform: translate(-50%, -50%); left: 50%;">
         {% if messages %}
             <div class="alert alert-success alert-dismissible text-center" role="alert">
                 {% for message in messages %}

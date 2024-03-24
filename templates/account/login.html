@@ -20,11 +20,13 @@
           value="{{ redirect_field_value }}" />
         {% endif %}
         <div class="row" style="margin-bottom: 10px;">
-          <a class="button" style="color: rgb(242, 242, 17);" href="{% url 'account_reset_password' %}">{% trans "Forgot
-            Password?" %}</a>
+          <a class="button" style="color: rgb(242, 242, 17);" href="{% url 'account_reset_password' %}">
+            {% trans "Forgot Password?" %}
+         </a>
         </div>
         <button class="registration-button" style="font-size: smaller;" type="submit">{% trans "Log In" %}</button>
       </form>
     </div>
   </div>
-</div {% endblock content %}
+</div>
+{% endblock content %}

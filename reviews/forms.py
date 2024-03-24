@@ -1,5 +1,11 @@
 from django import forms
 from .models import Review, Comment
+from django.contrib.auth.forms import UserCreationForm
+
+
+class CustomSignUpForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        fields = ['username', 'password1', 'password2']
 
 
 class ReviewForm(forms.ModelForm):

@@ -13,12 +13,36 @@
           style="color: yellow;">Log in</a> here.{% endblocktrans %}</p>
       <form class="signup" style="color: white;" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        <div class="form-fields">
-          {{ form }}
+        {% csrf_token %}
+        <div>
+            <label for="id_username">Username:</label>
+            {{ form.username }}
         </div>
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <div>
+            <label for="id_password1">Password:</label>
+            {{ form.password1 }}
+        </div>
+        <div>
+            <label for="id_password2">Confirm Password:</label>
+            {{ form.password2 }}
+        </div>
+        {% if form.errors %}
+            <ul class="errorlist">
+              {% for field in form %}
+              {% for error in field.errors %}
+               <li>{{ error }}</li>
+              {% endfor %}
+              {% endfor %}
+              </ul>
         {% endif %}
+        <div class="helptext">
+          <ul>
+              <li>Your password can't be too similar to your other personal information.</li>
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password can't be a commonly used password.</li>
+              <li>Your password can't be entirely numeric.</li>
+          </ul>
+      </div>
         <button class="registration-button" style="font-size: smaller;" type="submit">{% trans "Sign Up" %}</button>
       </form>
     </div>

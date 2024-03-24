@@ -4,6 +4,17 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Review, Comment
 from .forms import ReviewForm, CommentForm
+from .forms import CustomSignUpForm
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = CustomSignUpForm()
+    return render(request, 'signup.html', {'form': form})
 
 
 class PostList(generic.ListView):

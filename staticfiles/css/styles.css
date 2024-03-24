@@ -1,107 +1,25 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
     background-color: rgb(36, 11, 54);
     min-height: 100vh;
-    
-}
-
-.jumbotron {
-    margin-top: -20px;
 
 }
 
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Main Styles */
 main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-
-.nav-color {
-    background-color: rgb(74, 78, 119);
-}
-
-.navbar .navbar-brand { 
-    font-family: "Bangers", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 300%;   
-}
-
-.logo {
-     color: rgb(255, 255, 255);
-}
-
-.logo-r {
-    font-size: 75%;
-    color: rgb(255, 255, 255);
-}
-
-.navbar-collapse {
-    justify-content: flex-end;
-}
-
-.nav-link {
-    white-space: nowrap; 
-    color: rgb(255, 255, 255);
-    margin-top: 40px;
-}
-
-.navbar-nav .nav-link:hover {
-    color: white;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
-}
-
-
-.google-icons {
-    text-align: center;
-    margin-bottom: 100px;
-    margin-top: 25px;
-}
-.material-symbols-outlined {
-    color: rgb(250, 233, 0);
-    font-size: 250%;
-}
-
-.card {
-    max-width: 300px; 
-    margin: 0 auto; 
-}
-
-.card-img {
-    width: 100%; 
-    height: 350px; 
-    object-fit: cover;
-}
-
-
-.card-title {
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-}
-
-a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-
-.posted-time {
-    font-size: 12px;
-}
-
+/* Footer Styles */
 footer {
 
     bottom: 0;
@@ -112,39 +30,145 @@ footer {
     padding-top: 25px;
 }
 
+/* Navbar Styles */
+/* Navbar Color */
+.nav-color {
+    background-color: rgb(74, 78, 119);
+}
 
+/* Navbar Brand */
+.navbar .navbar-brand {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 300%;
+}
+
+/* Logo Styles */
+.logo {
+    color: rgb(255, 255, 255);
+}
+
+/* Logo (Right) Styles */
+.logo-r {
+    font-size: 75%;
+    color: rgb(255, 255, 255);
+}
+
+/* Navbar Collapse */
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+/* Navbar Links */
+.nav-link {
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    margin-top: 40px;
+}
+
+/* Navbar Link Hover Styles */
+.navbar-nav .nav-link:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Homepage Styles */
+/* Jumbotron Styles */
+.jumbotron {
+    margin-top: -20px;
+
+}
+
+/* Hero Image Styles */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Google Icons */
+.google-icons {
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 25px;
+}
+
+/* Material Symbols Outlined */
+.material-symbols-outlined {
+    color: rgb(250, 233, 0);
+    font-size: 250%;
+}
+
+/* Card Styles */
+.card {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Card Image Styles */
+.card-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Card Title Styles */
+.card-title {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Links Styles */
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Posted Time Styles */
+.posted-time {
+    font-size: 12px;
+}
+
+/* Review Title Styles */
 .review-title {
     color: rgb(255, 255, 255);
 }
 
+/* Review Content Styles */
 .review-content {
     color: rgb(255, 255, 255);
-    padding: 10px; 
-    max-width: 600px; 
-    margin: 0 auto; 
+    padding: 10px;
+    max-width: 600px;
+    margin: 0 auto;
     font-family: 'Lato', sans-serif;
-    
+
 }
 
+/* Comments Section Styles */
 .comments-section {
     color: rgb(255, 255, 255);
 }
 
-.submitted-date, .submitted-by {
+/* Submitted Date and Submitted By Styles */
+.submitted-date,
+.submitted-by {
     color: rgb(255, 255, 255);
     font-style: italic;
     flex: 1;
     font-size: 12px;
 }
 
+/* Review Image Styles */
 .review-img {
     width: 300px;
-    height: auto; 
+    height: auto;
     padding-left: 60px;
-   
+
 }
 
-
+/* Review Information Styles */
 .review-info {
     display: flex;
     justify-content: space-between;
@@ -152,25 +176,29 @@ footer {
     flex-wrap: wrap;
 }
 
-
+/* Submitted Date Styles */
 .submitted-date {
     text-align: center;
     margin-left: 100px;
 }
 
+/* Submitted By Styles */
 .submitted-by {
     text-align: center;
     margin-right: 100px;
 }
 
+/* Registration Styles */
 .registration {
-    color: rgb(255  255 255);
+    color: rgb(255 255 255);
 }
 
+/* Login Styles */
 .login {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
+/* Registration Button Styles */
 .registration-button {
     color: rgb(0, 0, 0);
     font-size: 200%;
@@ -180,45 +208,131 @@ footer {
     text-transform: uppercase;
     padding: 2px;
     border-radius: 16px;
-    
+
 }
 
+/* Messages Container Styles */
 .messages-container {
-    max-width: 800px; 
-    margin: 0 auto; 
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+/* Close Button Styles */
 .close {
-    background-color: transparent; 
-    border: none; 
-    outline: none; 
+    background-color: transparent;
+    border: none;
+    outline: none;
     font-size: 1.5rem;
-    position: absolute; 
-    top: 0; 
+    position: absolute;
+    top: 0;
     right: 0;
-    padding: 10px; 
+    padding: 10px;
 }
 
-
+/* Form Window Styles */
 .form-window {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
+/* No Resize Styles */
 .no-resize {
-    resize: none; 
-    border: none; 
-    width: 100%; 
+    resize: none;
+    border: none;
+    width: 100%;
+}
+
+/* Delete Review Modal Styles */
+#deleteReviewModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content (Delete) Styles */
+.modal-content-delete {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 90%;
+    margin: 18rem auto;
+
+}
+
+/* Comment Styles */
+.comment {
+    background-color: rgb(255, 255, 255, 0.25);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+/* Comment Header Styles */
+.comment-header {
+    margin-bottom: 5px;
+}
+
+/* Comment Date Styles */
+.comment-date {
+    color: #b7b7b7;
+}
+
+/* Like and Dislike Container Styles */
+.like-container,
+.dislike-container {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+}
+
+/* Material Symbols Outlined Styles */
+.material-symbols-outlined {
+    cursor: pointer;
+
+}
+
+/* Disabled Cursor Styles */
+.disabled-cursor {
+    cursor: default;
+}
+
+/* Media Queries for Smaller Screen Sizes */
+@media (max-width: 768px) {
+
+    .modal-body {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .modal-body a.btn {
+        margin-bottom: 10px;
+        display: block;
+        max-width: 180px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
 }
 
 @media (max-width: 991px) {
+
     .submitted-date,
     .submitted-by {
-        flex: 1 0 100%; 
-        text-align: center; 
+        flex: 1 0 100%;
+        text-align: center;
         margin: 0;
 
     }
@@ -227,7 +341,7 @@ footer {
 
 @media (max-width: 991px) {
     .nav-item {
-        
+
         margin-top: -20px;
         margin-bottom: -8px;
         text-align: center;
@@ -239,81 +353,3 @@ footer {
         margin-bottom: -50px;
     }
 }
-
-#deleteReviewModal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.4);
-}
-
-
-.modal-content-delete {
-    background-color: rgb(255, 255, 255); 
-    width: 500px;
-    height: auto;
-    border-radius: 10px; 
-    padding: 20px;
-    text-align: center;
-    max-width: 90%; 
-    margin: 18rem auto; 
-  
-}
-
-.comment {
-    background-color: rgb(255, 255, 255, 0.25);
-    padding: 10px; 
-    margin-bottom: 10px; 
-    margin-top: 30px;
-    border-radius: 10px;
-}
-
-.comment-header {
-    margin-bottom: 5px; 
-}
-
-.comment-date {
-    color: #b7b7b7; 
-}
-
-
-.like-container, .dislike-container {
-    display: inline-block;
-    margin-right: 10px; 
-    color: white;
-}
-
-
-.material-symbols-outlined {
-    cursor: pointer; 
-
-}
-
-.disabled-cursor {
-    cursor: default;
-}
-
-
-@media (max-width: 768px) {
-
-    .modal-body {
-        text-align: center; 
-        margin: 0 auto;
-      }
-
-    .modal-body a.btn {
-      margin-bottom: 10px; 
-      display: block;
-      max-width: 180px;
-    }
-  
-    .button-container {
-      text-align: center;
-    }
-  }
-
-

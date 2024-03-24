@@ -6,6 +6,7 @@ from .models import Review, Comment
 from .forms import ReviewForm, CommentForm
 from .forms import CustomSignUpForm
 
+
 def signup(request):
     if request.method == 'POST':
         form = CustomSignUpForm(request.POST)
@@ -54,8 +55,8 @@ def create_review(request):
             review.save()
             messages.success(
                 request,
-                "Your review has been submitted and is awaiting approval. ｡◕ ‿ ◕｡",
-            )
+                "Your review has been submitted "
+                "and is awaiting approval. ｡◕ ‿ ◕｡")
             return redirect("home")
     else:
         form = ReviewForm()
@@ -65,7 +66,8 @@ def create_review(request):
 def my_reviews(request):
     # Display reviews created by the logged-in user
     user_reviews = Review.objects.filter(user=request.user)
-    return render(request, "reviews/my_reviews.html", {"review_list": user_reviews})
+    return render(request, "reviews/my_reviews.html",
+                  {"review_list": user_reviews})
 
 
 def sort_reviews(request, sort_option):
@@ -84,7 +86,8 @@ def sort_reviews(request, sort_option):
     else:
         sorted_reviews = queryset.order_by(default_sort)
 
-    return render(request, "reviews/review_list.html", {"review_list": sorted_reviews})
+    return render(request, "reviews/review_list.html",
+                  {"review_list": sorted_reviews})
 
 
 def edit_review(request, slug):
@@ -95,7 +98,8 @@ def edit_review(request, slug):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your review has been successfully updated.")
+            messages.success(request, "Your review has been"
+                             "successfully updated.")
             return redirect("review_list", slug=review.slug)
     else:
         form = ReviewForm(instance=review)
@@ -104,7 +108,7 @@ def edit_review(request, slug):
 
 
 def delete_review(request, slug):
-     # Delete an existing review
+    # Delete an existing review
     review = get_object_or_404(Review, slug=slug)
     if request.method == "POST":
         review.delete()
@@ -125,11 +129,13 @@ def post_comment(request, slug):
             comment.review = review
             comment.user = request.user
             comment.save()
-            messages.success(request, "You have successfully commented on this review")
+            messages.success(request, "You have successfully"
+                             "commented on this review")
             return redirect("review_detail", slug=slug)
     else:
         form = CommentForm()
-        comments = Comment.objects.filter(review=review).order_by("posted_time")
+        comments = Comment.objects.filter(review=review)\
+            .order_by("posted_time")
 
     return render(
         request,
@@ -144,7 +150,8 @@ def review_detail(request, slug):
     comments = Comment.objects.filter(review=review).order_by("posted_time")
 
     return render(
-        request, "reviews/review_detail.html", {"review": review, "comments": comments}
+        request, "reviews/review_detail.html",
+                 {"review": review, "comments": comments}
     )
 
 

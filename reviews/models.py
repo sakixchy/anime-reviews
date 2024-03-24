@@ -24,7 +24,10 @@ class Review(models.Model):
         ordering = ["-posted_time"]
 
     def __str__(self):
-        return f"The title of Review is {self.title} | submitted by {self.user}"
+        return (
+         f"The title of Review is {self.title} "
+         f"| submitted by {self.user}"
+        )
 
     def save(self, *args, **kwargs):
         if not self.slug:

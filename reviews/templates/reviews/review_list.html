@@ -2,91 +2,95 @@
 {% load static %}
 
 {% block head %}
-    {{ block.super }}
-    <title>{% block title %}Home - Anime Reviews {% endblock %}</title>
-    <!-- Link to Google Icons for Filter -->
-    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:filter_list:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
+{{ block.super }}
+<title>{% block title %}Home - Anime Reviews {% endblock %}</title>
+<!-- Link to Google Icons for Filter -->
+<link rel="stylesheet"
+  href="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:filter_list:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web">
 {% endblock %}
 
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
   <img src="{% static 'images/hero-img.jpg' %}" alt="Hero Image" class="hero-image">
   <div class="container">
-      <h1 class="display-4" style="font-family: 'Bangers'; color:white">Welcome to Anime Reviews</h1>
-      <p class="lead" style="color: white;">Discover and review your favorite anime!</p>
-      <p style="color: white;">Our platform provides a space for anime enthusiasts to share their thoughts, recommendations, and reviews with other anime watchers.<br>
-        In order to review anime on our website and participate in discussions, you will need to create a user account. Registration is simple and free.</p>
-      <p style="color: white;">If you prefer not to register, you can still enjoy reading the reviews and exploring our extensive collection of anime titles. Dive into the world of anime and discover new favorites!</p>
-        <hr style="color:white">
+    <h1 class="display-4" style="font-family: 'Bangers'; color:white">Welcome to Anime Reviews</h1>
+    <p class="lead" style="color: white;">Discover and review your favorite anime!</p>
+    <p style="color: white;">Our platform provides a space for anime enthusiasts to share their thoughts,
+      recommendations, and reviews with other anime watchers.<br>
+      In order to review anime on our website and participate in discussions, you will need to create a user account.
+      Registration is simple and free.</p>
+    <p style="color: white;">If you prefer not to register, you can still enjoy reading the reviews and exploring our
+      extensive collection of anime titles. Dive into the world of anime and discover new favorites!</p>
+    <hr style="color:white">
   </div>
 </div>
 
 <div class="container-fluid">
-    <div class="row">
+  <div class="row">
 
-        <!-- Review Entries -->
-        <div class="col-12 mt-3 left">
-             <div class="row justify-content-center">
-                <div class="google-icons">
-                  <span class="material-symbols-outlined" style="font-size: 60px; cursor: pointer;" id="filterButton">
-                    filter_alt
-                  </span>
-                </div>
-                <div id="reviewModal" class="modal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Filter Anime Reviews</h5>
-                          </button>
-                        </div>
-                        <div class="modal-body" style="margin: 0 auto;">
-                            <a href="{% url 'sort_reviews' sort_option='latest' %}" class="btn btn-warning">Sort by Latest</a>
-                            <a href="{% url 'sort_reviews' sort_option='oldest' %}" class="btn btn-warning">Sort by Oldest</a>
-                            <a href="{% url 'sort_reviews' sort_option='atoz' %}" class="btn btn-warning">A to Z</a>
-                            <a href="{% url 'sort_reviews' sort_option='ztoa' %}" class="btn btn-warning">Z to A</a>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% for review in review_list %}
-                <div class="col-md-4 mb-3">
-                  <div class="card mb-4">
-                      <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">   
-                        <span class="like-container">
-                          <span class="material-symbols-outlined disabled-cursor">
-                            thumb_up
-                            </span>
-                          <span id="like-counter" class="like-counter">{{ review.likes }}</span>
-                        </span>
-                        <span class="dislike-container">
-                          <span class="material-symbols-outlined disabled-cursor">
-                            thumb_down
-                            </span>
-                            <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
-                          </span>
-                          <div class="image-container">
-                            <a href="{% url 'review_detail' slug=review.slug %}">
-                              <img class="card-img" src="{{ review.image.url }}" alt="Image">
-                            </a>
-                                  <p class="user text-muted">submitted by {{ review.user}}</p>
-                          </div>
-                          <a href="{% url 'review_list' review.slug %}" class="review-link">
-                              <h2 class="card-title">{{ review.title }}</h2>
-                          </a>
-                          <hr/>
-                          <p class="card-text text-muted posted-time">{{ review.posted_time}}
-                          </p>
-                      </div>
-                  </div>
-              </div>  
-              {% endfor %}
+    <!-- Review Entries -->
+    <div class="col-12 mt-3 left">
+      <div class="row justify-content-center">
+        <div class="google-icons">
+          <span class="material-symbols-outlined" style="font-size: 60px; cursor: pointer;" id="filterButton">
+            filter_alt
+          </span>
+        </div>
+        <div id="reviewModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Filter Anime Reviews</h5>
+                </button>
+              </div>
+              <div class="modal-body" style="margin: 0 auto;">
+                <a href="{% url 'sort_reviews' sort_option='latest' %}" class="btn btn-warning">Sort by Latest</a>
+                <a href="{% url 'sort_reviews' sort_option='oldest' %}" class="btn btn-warning">Sort by Oldest</a>
+                <a href="{% url 'sort_reviews' sort_option='atoz' %}" class="btn btn-warning">A to Z</a>
+                <a href="{% url 'sort_reviews' sort_option='ztoa' %}" class="btn btn-warning">Z to A</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
+        </div>
+        {% for review in review_list %}
+        <div class="col-md-4 mb-3">
+          <div class="card mb-4">
+            <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">
+              <span class="like-container">
+                <span class="material-symbols-outlined disabled-cursor">
+                  thumb_up
+                </span>
+                <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+              </span>
+              <span class="dislike-container">
+                <span class="material-symbols-outlined disabled-cursor">
+                  thumb_down
+                </span>
+                <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+              </span>
+              <div class="image-container">
+                <a href="{% url 'review_detail' slug=review.slug %}">
+                  <img class="card-img" src="{{ review.image.url }}" alt="Image">
+                </a>
+                <p class="user text-muted">submitted by {{ review.user}}</p>
+              </div>
+              <a href="{% url 'review_list' review.slug %}" class="review-link">
+                <h2 class="card-title">{{ review.title }}</h2>
+              </a>
+              <hr />
+              <p class="card-text text-muted posted-time">{{ review.posted_time}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
       </div>
-  </div> 
+    </div>
+  </div>
+</div>
 </div>
 <script src="{% static 'js/script.js' %}"></script>
 

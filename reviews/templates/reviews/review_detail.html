@@ -5,22 +5,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ anime_title }}{% endblock %}</title>
 </head>
+
 <body>
     {% block content %}
     <div class="container-fluid">
         <div class="row" style="text-align: center;">
-             <h1 class="review-title" style="margin: 30px 0px 30px 0px;" >{{ review.title }}</h1>
+            <h1 class="review-title" style="margin: 30px 0px 30px 0px;">{{ review.title }}</h1>
         </div>
         <div class="row">
             <!-- Image and Anime Rating -->
             <div class="col-md-4">
                 <img src="{{ review.image.url }}" alt="{{ review.title }}" class="img-fluid mb-3 review-img">
-                <p style="color: white; font-size: 110%;">Anime Rating: {{ review.stars }} ({{ review.rating }}/5 stars)</p>
+                <p style="color: white; font-size: 110%;">Anime Rating: {{ review.stars }} ({{ review.rating }}/5 stars)
+                </p>
             </div>
             <!-- Review Content -->
             <div class="col-md-8">
@@ -31,14 +34,16 @@
             </div>
             {% if user.is_authenticated %}
             <div class="like-dislike-container">
-                <form id="like-form" action="{% url 'like_review' slug=review.slug %}" method="post" style="display: inline-block;">
+                <form id="like-form" action="{% url 'like_review' slug=review.slug %}" method="post"
+                    style="display: inline-block;">
                     {% csrf_token %}
                     <button type="submit" class="dislike-button btn btn-warning" style="color: black;">
                         <span class="material-symbols-outlined" style="color: black;">thumb_up</span>
                         <span id="like-counter" class="like-counter">{{ review.likes }}</span>
                     </button>
                 </form>
-                <form id="dislike-form" action="{% url 'dislike_review' slug=review.slug %}" method="post" style="display: inline-block;">
+                <form id="dislike-form" action="{% url 'dislike_review' slug=review.slug %}" method="post"
+                    style="display: inline-block;">
                     {% csrf_token %}
                     <button type="submit" class="dislike-button btn btn-warning" style="color: black;">
                         <span class="material-symbols-outlined" style="color: black;">thumb_down</span>
@@ -46,22 +51,22 @@
                     </button>
                 </form>
             </div>
-        {% else %}
-        <div class="like-dislike-container">
-            <span class="like-container" style="color: white;">
-                <span class="material-symbols-outlined disabled-cursor">
-                  thumb_up
-                  </span>
-                <span id="like-counter" class="like-counter">{{ review.likes }}</span>
-              </span>
-              <span class="dislike-container" style="color: white;">
-                <span class="material-symbols-outlined disabled-cursor">
-                  thumb_down
-                  </span>
-                  <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+            {% else %}
+            <div class="like-dislike-container">
+                <span class="like-container" style="color: white;">
+                    <span class="material-symbols-outlined disabled-cursor">
+                        thumb_up
+                    </span>
+                    <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+                </span>
+                <span class="dislike-container" style="color: white;">
+                    <span class="material-symbols-outlined disabled-cursor">
+                        thumb_down
+                    </span>
+                    <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
                 </span>
             </div>
-        {% endif %}
+            {% endif %}
             <div class="row mt-3">
                 <div class="col-md-12 text-right">
                     {% if user.is_authenticated and review.user == user %}
@@ -78,7 +83,7 @@
                                 </form>
                             </div>
                         </div>
-                     </div>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -94,28 +99,31 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-control" style="margin-left: -20px; margin-right: 0;">
-                                    <textarea class="form-control" name="content" style="max-height: 600px; min-height: 100px; overflow: auto; resize: none;" 
-                                    placeholder="Write your comment here..."></textarea>
+                                    <textarea class="form-control" name="content"
+                                        style="max-height: 600px; min-height: 100px; overflow: auto; resize: none;"
+                                        placeholder="Write your comment here..."></textarea>
                                 </div>
                                 <div class="row">
-                                    <div class="col" style="margin-left: -20px; margin-right: 0;"> 
-                                        <button type="submit" class="btn btn-warning" style="margin-top: 5px;">Post Comment</button>
+                                    <div class="col" style="margin-left: -20px; margin-right: 0;">
+                                        <button type="submit" class="btn btn-warning" style="margin-top: 5px;">Post
+                                            Comment</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                            
+
                 </form>
-            {% else %}
-                <p style="color: white;">Please <a style="color: yellow;" href="{% url 'login' %}">log in</a> to post a comment.</p>
-            {% endif %}
+                {% else %}
+                <p style="color: white;">Please <a style="color: yellow;" href="{% url 'login' %}">log in</a> to post a
+                    comment.</p>
+                {% endif %}
             </div>
         </div>
         <div class="col-lg-6">
             <!-- Posted Comments -->
-        {% if comments %}
-        {% for comment in comments reversed %}
+            {% if comments %}
+            {% for comment in comments reversed %}
             <div class="comment">
                 <div class="comment-header">
                     <strong>{{ comment.user }}:</strong>
@@ -125,39 +133,40 @@
                     <p>{{ comment.content }}</p>
                 </div>
             </div>
-        {% endfor %}
-      {% else %}
-        <p style="color: white; margin-top: 30px; font-size: 20px;">No comments yet.</p>
-    {% endif %}
+            {% endfor %}
+            {% else %}
+            <p style="color: white; margin-top: 30px; font-size: 20px;">No comments yet.</p>
+            {% endif %}
         </div>
-        
+
     </div>
     <script>
 
-    const deleteButton = document.getElementById('deleteButton');
-    const deleteReviewModal = document.getElementById('deleteReviewModal');
+        const deleteButton = document.getElementById('deleteButton');
+        const deleteReviewModal = document.getElementById('deleteReviewModal');
 
-  
+
         if (deleteButton) {
-    deleteButton.addEventListener('click', function() {
-        if (deleteReviewModal) {
-            deleteReviewModal.style.display = 'block';
+            deleteButton.addEventListener('click', function () {
+                if (deleteReviewModal) {
+                    deleteReviewModal.style.display = 'block';
+                }
+            });
         }
-    });
-}
 
-    const goBackButton = document.getElementById('goBackButton');
-    if (goBackButton) {
-        goBackButton.addEventListener('click', function() {
-            const modal = document.getElementById('deleteReviewModal');
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
+        const goBackButton = document.getElementById('goBackButton');
+        if (goBackButton) {
+            goBackButton.addEventListener('click', function () {
+                const modal = document.getElementById('deleteReviewModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
 
-            
+
     </script>
     {% endblock%}
 </body>
+
 </html>

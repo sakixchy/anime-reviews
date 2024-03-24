@@ -9,43 +9,43 @@
     <div class="row">
         <div class="col-12 mt-3 left">
             <h1 style="color: white; text-align: center; margin-bottom: 40px;">My Reviews</h1>
-             <div class="row justify-content-center">
+            <div class="row justify-content-center">
                 {% for review in review_list %}
                 {% if review.user == request.user %}
-                    <div class="col-md-4 mb-3">
-                        <div class="card mb-4">
-                            <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">
-                                <span class="like-container">
-                                    <span class="material-symbols-outlined disabled-cursor">
-                                      thumb_up
-                                      </span>
-                                    <span id="like-counter" class="like-counter">{{ review.likes }}</span>
-                                  </span>
-                                  <span class="dislike-container">
-                                    <span class="material-symbols-outlined disabled-cursor">
-                                      thumb_down
-                                      </span>
-                                      <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
-                                    </span>
-                                <div class="image-container">
-                                    <img class="card-img" src="{{ review.image.url }}" alt="Image">
-                                    <p class="user text-muted">submitted by {{ review.user }}</p>
-                                </div>
-                                <a href="{% url 'review_list' review.slug %}" class="review-link">
-                                    <h2 class="card-title">{{ review.title }}</h2>
-                                </a>
-                                <hr/>
-                                <p class="card-text text-muted posted-time">{{ review.posted_time }}</p>
+                <div class="col-md-4 mb-3">
+                    <div class="card mb-4">
+                        <div class="card-body" style="background-color: rgba(36, 11, 54, 0.8);">
+                            <span class="like-container">
+                                <span class="material-symbols-outlined disabled-cursor">
+                                    thumb_up
+                                </span>
+                                <span id="like-counter" class="like-counter">{{ review.likes }}</span>
+                            </span>
+                            <span class="dislike-container">
+                                <span class="material-symbols-outlined disabled-cursor">
+                                    thumb_down
+                                </span>
+                                <span id="dislike-counter" class="dislike-counter">{{ review.dislikes }}</span>
+                            </span>
+                            <div class="image-container">
+                                <img class="card-img" src="{{ review.image.url }}" alt="Image">
+                                <p class="user text-muted">submitted by {{ review.user }}</p>
                             </div>
+                            <a href="{% url 'review_list' review.slug %}" class="review-link">
+                                <h2 class="card-title">{{ review.title }}</h2>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted posted-time">{{ review.posted_time }}</p>
                         </div>
                     </div>
+                </div>
                 {% endif %}
-                {% endfor %}  
+                {% endfor %}
                 {% if not review_list %}
-                    <p  style="color: white; text-align: center; font-size: 30px;">No reviews submitted yet.</p>
-                {% endif %}          
-             </div>
+                <p style="color: white; text-align: center; font-size: 30px;">No reviews submitted yet.</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 
-{% endblock %}
+    {% endblock %}

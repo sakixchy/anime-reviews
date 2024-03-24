@@ -29,12 +29,13 @@
                     <div class="form-group">
                         <label for="id_image" style="display: block;">Image:</label>
                         {% if form.instance.image %}
-                        <img src="{{ form.instance.image.url }}" alt="Existing Image" style="max-width: 75px; max-height: 75px;">
+                        <img src="{{ form.instance.image.url }}" alt="Existing Image"
+                            style="max-width: 75px; max-height: 75px;">
                         {% endif %}
-                     
                     </div>
                     <div class="text-center">
-                        <button id="saveChanges" class="btn btn-warning" style="margin-top: 20px;" type="submit">Save Changes</button>
+                        <button id="saveChanges" class="btn btn-warning" style="margin-top: 20px;" type="submit">Save
+                            Changes</button>
                     </div>
                 </form>
             </div>

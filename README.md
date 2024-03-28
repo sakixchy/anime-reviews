@@ -18,7 +18,8 @@ Each element on the site is permeated with bold, popping colors, adding a visual
 At the beginning of the development stage, Agile approach was initiated for project management. This allowed flexibility with implementing features and keeping track of tasks on hand in relation to the project. It was made possbil by creating user stories of each sgement of the features and adding them to the canban board. Here is my [Github Project](https://github.com/users/sakixchy/projects/7) where i have kept track of my progress during the development.
 
 ### Wireframes
-[Balsamiq](https://balsamiq.com/) was utilized to create a visual representation of a concept of the website prior to start developing it. Below are all wireframes for this project: <br>
+[Balsamiq](https://balsamiq.com/) was utilized to create a visual representation of a concept of the website prior to start developing it. These Mockup are not actual represntation of the final website but rather for planning purposes. <br>
+Below are all wireframes for this project: <br>
 <details>
     <summary>
         Desktop Wireframes
@@ -41,4 +42,46 @@ At the beginning of the development stage, Agile approach was initiated for proj
     <img src="readme/assets/wireframes/mobile-wireframes/mobile-login.png" alt="Mobile Wireframes Mockup">
     <img src="readme/assets/wireframes/mobile-wireframes/mobile-signup.png" alt="Mobile Wireframes Mockup">
 </details>
+
+### Site Goals
+This site aims to provide a strong foundation for all anime fans around the world. It does so by allowing people to share their opinions on their Anime with other fellow anime wtachers. They have access to the basic charactersitics of an review site with features that empower an user to fully express their emotions through the site. The site also lets any visitor to have a fun time while reading and taking verdict from others on an Anime.
+
+### Structure
+#### Home Page
+![home structure](readme/assets/home-structure.png) <br>
+- Welcome Section: Greets site visitors and sets the tone for the browsing experience.
+- Introductory Message: Offers a brief introduction to the website's purpose and features, helping users understand what the site offers.
+- Anime Title Library: Provides a comprehensive library of anime titles for browsing, allowing users to explore and discover new content easily.
+
+#### User Goal:
+>   - Feel welcomed by the site.
+>   - Understand the purpose and features of the site.
+>   - Browse through the extensive anime titles.
+#### Website Goal:
+>   - Make the site visitor feel weclomed.
+>   - Inform the visitor about necessary information.
+>   - Let the users able sort anime titles by filtering method.
+>   - Showcase all titles in one place for browsing 
+
+### Sign Up Page
+![sign up structure](readme/assets/signup-structure.png) <br>
+- Intuitive Signup Method: Offers a user-friendly and straightforward signup process.
+- Detailed Help Text: Provides comprehensive help text to assist users in completing the signup process successfully. 
+
+#### User Goal:
+>   - Create an account with ease and get access to restricted pages.
+#### Website Goal:
+>   - Allow users to create an account.
+
+
+### Login Page
+![log in structure](readme/assets/login-structure.png) <br>
+- Intuitive Login Method: Offers a user-friendly and straightforward login process.
+
+#### User Goal:
+>   - Login to the website with the provided cedentials.
+#### Website Goal:
+>   - Allow users to login with their account.
+
+
 

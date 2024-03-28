@@ -23,12 +23,22 @@ At the beginning of the development stage, Agile approach was initiated for proj
     <summary>
         Desktop Wireframes
     </summary>
-    <img src="readme/assets/wireframes/desktop-wireframes" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-home.png" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-create-review.png" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-edit-review.png" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-my-reviews.png" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-login.png" alt="Desktop Wireframes Mockup">
+    <img src="readme/assets/wireframes/desktop-wireframes/desktop-signup.png" alt="Desktop Wireframes Mockup">
 </details>
 <details>
     <summary>
         Mobile Wireframes
     </summary>
-    <img src="readme/assets/wireframes/mobile-wireframes" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-home.png" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-create-review.png" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-edit-review.png" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-my-reviews.png" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-login.png" alt="Mobile Wireframes Mockup">
+    <img src="readme/assets/wireframes/mobile-wireframes/mobile-signup.png" alt="Mobile Wireframes Mockup">
 </details>
 

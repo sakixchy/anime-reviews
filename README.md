@@ -118,4 +118,17 @@ This site aims to provide a strong foundation for all anime fans around the worl
 >   - Users can access comprehensive information about a specific anime review, enabling them to read a review, ratings, and opinions to inform their viewing decisions or engage in discussions with other users.
 #### Website Goal:
 >   - Provide users with an immersive and informative experience by presenting detailed information about individual anime reviews, enhancing user engagement and allowing discussions within a review.
+___
+## Design
+### Color Scheme
+The specific color scheme chosen was intended to make the foreground elements of the site pop, creating a striking contrast with other elements and enhancing the overall visual experience. By utilizing dark and contrasting colors, the scheme ensures that key components stand out effectively.<br>
+![color scheme](readme/assets/color-scheme.png)<br>
 
+### Typography 
+The font style were selected to serve their respective purposes. The large heading conveys a comic and bold font whilst general writing of reviews remains true to blog style. The buttons have a standard font style found across blog sites.<br>
+![font styles](readme/assets/typography.png)
+
+### Images
+The hero image was selected from [here](https://ru.pinterest.com/pin/334321972329328873/) to capture the essence of anime, therefore making a fimiliar and inviting setting for the visitors. <br>
+The anime title images available for attachment to reviews are personal images chosen by users themselves. These images are not owned by the site but are instead provided by users to personalize their reviews and add visual context to their opinions.
+___

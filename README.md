@@ -139,8 +139,19 @@ ___
 ### Existing Features
 #### Navbar
 The navbar consists of a logo which redirects to the 'home', nav links to other pages that are dynamically adjusted based on user authentication status, with certain links appearing or disppearing. The navbar is also adjusted for smaller screen sizes and has a different layout <br>
-![navbar not logged in desktop](readme/assets/features-nav.png) <br>
-![navbar logged in desktop](readme/assets/features-nav-alt.png) <br>
-![navbar not logged in mobile](readme/assets/features-nav-mobile.png) <br>
-![navbar logged in mobile](readme/assets/features-nav-mobile-alt.png) <br>
+<details>
+    <summary>
+        Desktop Navbar
+    </summary>
+    <img src="readme/assets/features-nav.png" alt="Navbar Feature not logged in">
+    <img src="readme/assets/features-nav-alt.png" alt="Navbar Feature logged in">
+</details>
+<details>
+    <summary>
+        Mobile Navbar
+    </summary>
+    <img src="readme/assets/features-nav-mobile.png" alt="Navbar Feature not logged in mobile">
+    <img src="readme/assets/features-nav-mobile-alt.png" alt="Navbar Feature logged in mobile">
+</details>
+
 

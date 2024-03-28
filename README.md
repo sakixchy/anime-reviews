@@ -83,5 +83,39 @@ This site aims to provide a strong foundation for all anime fans around the worl
 #### Website Goal:
 >   - Allow users to login with their account.
 
+### Create Review Page
+![create review structure](readme/assets/create-review-structure.png) <br>
+- Create Anime Reviews: Allows users to compose detailed reviews of anime titles they've watched, including text fields for title, review content, rating, and an image of an Anime.
 
+#### User Goal:
+>   - Create a review with provided details and submit it for view.
+#### Website Goal:
+>   - Provide users with input fields and allow submission of reviews.
+
+### Edit Review Page
+![edit review structure](readme/assets/edit-reviews-structure.png) <br>
+- Edit Anime Reviews: Owner of review titles can access to edit functionality to revise and update exisitng reviews.
+
+#### User Goal:
+>   - Users can edit their existing anime reviews to update information, improve clarity, or correct errors.
+#### Website Goal:
+>   - Allowing editing process by providing users with access to their previously submitted reviews, allowing them to make modifications as needed.
+
+### My Reviews Page
+![my reviews structure](readme/assets/my-reviews-structure.png) <br>
+- My Anime Reviews: Provides a personalized list of all anime reviews submitted by the logged-in user, allowing them to easily access and manage their contributions.
+
+#### User Goal:
+>   - Users can access a convenient compilation of all anime reviews they have submitted, enabling them to review their contributions and make any necessary updates or modifications.
+#### Website Goal:
+>   - Enhance user experience by offering a dedicated page where users can effeórtlessly access and manage their own reviews.
+
+### Review Detail Page
+![review detail structure](readme/assets/review-detail-structure.png) <br>
+- Review Detail: Displays detailed information about a specific anime review, including the title, content, rating, and comments made by the user. Additionally, edit and delete functionality.
+
+#### User Goal:
+>   - Users can access comprehensive information about a specific anime review, enabling them to read a review, ratings, and opinions to inform their viewing decisions or engage in discussions with other users.
+#### Website Goal:
+>   - Provide users with an immersive and informative experience by presenting detailed information about individual anime reviews, enhancing user engagement and allowing discussions within a review.
 

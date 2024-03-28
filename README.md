@@ -126,7 +126,10 @@ The specific color scheme chosen was intended to make the foreground elements of
 
 ### Typography 
 The font style were selected to serve their respective purposes. The large heading conveys a comic and bold font whilst general writing of reviews remains true to blog style. The buttons have a standard font style found across blog sites.<br>
-![font styles](readme/assets/typography.png)
+[Banger for Heading](https://fonts.google.com/specimen/Bangers?selection.family=Lato:wght@100)
+[Lato for Blog](https://fonts.google.com/specimen/Lato?selection.family=Lato:wght@100)
+[Roboto for Buttons](https://fonts.google.com/specimen/Roboto?selection.family=Lato:wght@100)
+
 
 ### Images
 The hero image was selected from [here](https://ru.pinterest.com/pin/334321972329328873/) to capture the essence of anime, therefore making a fimiliar and inviting setting for the visitors. <br>

@@ -132,6 +132,15 @@ The font style were selected to serve their respective purposes. The large headi
 
 
 ### Images
-The hero image was selected from [here](https://ru.pinterest.com/pin/334321972329328873/) to capture the essence of anime, therefore making a fimiliar and inviting setting for the visitors. <br>
+The hero image was selected from [here](https://ru.pinterest.com/pin/334321972329328873/) to capture the essence of anime, therefore making a fimiliar and inviting setting for the visitors.
 The anime title images available for attachment to reviews are personal images chosen by users themselves. These images are not owned by the site but are instead provided by users to personalize their reviews and add visual context to their opinions.
 ___
+## Features
+### Existing Features
+#### Navbar
+The navbar consists of a logo which redirects to the 'home', nav links to other pages that are dynamically adjusted based on user authentication status, with certain links appearing or disppearing. The navbar is also adjusted for smaller screen sizes and has a different layout <br>
+![navbar not logged in desktop](readme/assets/features-nav.png) <br>
+![navbar logged in desktop](readme/assets/features-nav-alt.png) <br>
+![navbar not logged in mobile](readme/assets/features-nav-mobile.png) <br>
+![navbar logged in mobile](readme/assets/features-nav-mobile-alt.png) <br>
+

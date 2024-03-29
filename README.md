@@ -138,7 +138,7 @@ ___
 ## Features
 ### Existing Features
 #### Navbar
-The navbar consists of a logo which redirects to the 'home', nav links to other pages that are dynamically adjusted based on user authentication status, with certain links appearing or disppearing. The navbar is also adjusted for smaller screen sizes and has a different layout <br>
+The navbar consists of a logo which redirects to the 'home', nav links to other pages that are dynamically adjusted based on user authentication status, with certain links appearing or disppearing. The navbar is also adjusted for smaller screen sizes and has a different layout. <br>
 <details>
     <summary>
         Desktop Navbar
@@ -154,4 +154,22 @@ The navbar consists of a logo which redirects to the 'home', nav links to other 
     <img src="readme/assets/features-nav-mobile-alt.png" alt="Navbar Feature logged in mobile">
 </details>
 
+#### Introduction Text
+Provides users with useful information regarding the site, thereby familiarizing them with the platform.
+![features intro text](readme/assets/features-intro.png) <br>
 
+#### Filter Button
+The filter button enables users to arrange anime titles according to specific criteria or preferences.
+![features filter button](readme/assets/features-filter.png) <br>
+
+#### Anime Review list
+The anime review list consists of cards serving as gateways to detailed reviews for each anime. With pagination, users can navigate through multiple pages of reviews straight from the home page.
+![ features paginated list](readme/assets/features-paginated-list.png) <br>
+
+#### My Reviews
+The page only shows anime reviews submitted by an authenticated user otherwise a message informing users of no review being submitted by them.
+![features my reviews](readme/assets/features-my-reviews.png) <br>
+
+#### Review Detail
+The review detail page provides users with the ability to read reviews and interact with other elements of the site. Edit and Delete buttons dynamically adjust based on user authentication, appearing only for the user who submitted the review and disappearing for others. 
+![features review detail](readme/assets/review-detail-structure.png) <br>

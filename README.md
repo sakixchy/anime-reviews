@@ -221,9 +221,26 @@ The genre tags will be integrated within the anim ereviews and users will have t
 ___
 ## Database Design
 ### Database (ERD) Table
-The table was created by a website called [Lucid Chart](hhtps://www.lucidchart.com). <br>
+The table was created by a website called [Lucid Chart](https://www.lucidchart.com). <br>
 ![erd table](readme/assets/anime-reviews-erd.png) <br>
 
 ### CRUD
 The CRUD functionality serves as the backbone of the database relationship. Reviews utilize this functionality to Create, Read, Update, and Delete data, ensuring seamless management and manipulation of anime reviews. This allows users to interact with reviews effectively, from submitting new reviews to editing existing ones, and reading their own reviews to ultimately deleting them.
 ___
+## Technologies Used
+- [Balsamiq](https://balsamiq.com/)(Wireframes)
+- [Lucidchart](https://lucidchart.com/)(ERD Database Table)
+- [GitHub](https://github.com)(Version Control)
+- [GitPod](https://gitpod.io)(IDE)
+- [Heroku](https://heroku.com)(Site Hosting)
+- [Cloudinary](https://cloudinary.com)(Serving Images)
+- [Black](https://pypi.org/project/black/)(Code Formatter)
+- [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html)(Static files serving for Django)
+- [Gunicorn](https://gunicorn.org/)(WSGI HTTPS Request)
+- [pyscopg2](https://pypi.org/project/psycopg2/)(PostgreSQL Database adapter)
+- [django-allauth](https://docs.allauth.org/en/latest/installation/quickstart.html)(User Authentication)
+- [dj3-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/)(Django storage for Cloudinary)
+- [ElephantSQL](https://www.elephantsql.com/)(PostgreSQL database hosting)
+___
+Testing
+

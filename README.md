@@ -244,4 +244,35 @@ ___
 - [Summernote](https://summernote.org/getting-started/#integration)(WYSIWYG Editor)(Not fully implemented)
 ___
 ## Testing
-The full manual testing is being done in an separate file, to view it click [here](TESTING.md).
+### Manual Testing
+The full manual testing is being done in a separate file, to view it click [here](TESTING.md).
+
+### Validator Testing
+HTML [W3C Validator](https://validator.w3.org/) was used to check for any errors or bad practices. <br>
+- Home 
+![home html validation](readme/assets/code-validations/home-html-validator.png) <br>
+- Register
+![signup html validation](readme/assets/code-validations/signup-html-validator.png) <br>
+- Login
+![login html validation](readme/assets/code-validations/login-html-validator.png) <br>
+- Logout
+![logout html validation]()
+- Create Review
+![create review html validation](readme/assets/code-validations/create-review-html-validator.png) <br>
+- My Reviews
+![my reviews html validation](readme/assets/code-validations/my-reviews-html-validator.png) <br>
+- Review Detail
+![review detail html validation](readme/assets/code-validations/review-detail-html-validator.png) <br>
+- Edit Review
+![edit review html validation](readme/assets/code-validations/review-edit-html-validator.png) <br>
+- Logout
+[logout html validation](readme/assets/code-validations/logout-html-validator.png) <br>
+
+CSS [Jigsaw](https://jigsaw.w3.org/css-validator/) <br>
+![style css validation](readme/assets/code-validations/css-validator.png)
+
+
+
+
+
+

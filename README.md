@@ -159,7 +159,7 @@ Provides users with useful information regarding the site, thereby familiarizing
 ![features intro text](readme/assets/features-intro.png) <br>
 
 #### Filter Button
-The filter button enables users to arrange anime titles according to specific criteria or preferences.
+The filter button enables users to arrange anime titles according to specific criteria or preferences. <br>
 ![features filter button](readme/assets/features-filter.png) <br>
 
 #### Anime Review list
@@ -173,3 +173,51 @@ The page only shows anime reviews submitted by an authenticated user otherwise a
 #### Review Detail
 The review detail page provides users with the ability to read reviews and interact with other elements of the site. Edit and Delete buttons dynamically adjust based on user authentication, appearing only for the user who submitted the review and disappearing for others. 
 ![features review detail](readme/assets/review-detail-structure.png) <br>
+
+#### Impressions
+Authenticated users can express their opinion on reviews by liking or disliking a review. They are displayed in various places of the site to provide community's sentiment towards a particular rev56iew.5
+![features impressions](readme/assets/features-impressions.png) <br>
+
+#### Comments
+Authenticated users have the ability to post comments on reviews, initiating engagement and discussion within the community. They can read comments of others as well. <br>
+![features comments](readme/assets/features-comments.png) <br>
+- An example of posted comment: <br>
+![posted comments example](readme/assets/posted-comment.png) <br>
+
+#### Edit Review
+Authenticated users who have submitted reviews have the ability to edit or modify them. While users cannot change the associated image, as it is fixed for moderation purposes, all other fields are open for amendment. <br>
+![features edit review](readme/assets/features-edit-review.png) <br>
+
+#### Delete Review
+Authenticated users who have submitted reviews have the ability to delete them. Users will receive a prompt before deleting the review permanently. <br>
+![features delete review](readme/assets/features-delete-review.png) <br>
+
+#### Create Review
+Authenticated users can submit a review for an anime title. This feature enables users to share their opinions, insights, and recommendations with the community, contributing to a rich and diverse collection of reviews on the platform. All fields must be filled to submit a review or else the form won't be submitted. <br>
+![features create review](readme/assets/features-create-review.png) <br>
+
+#### Signup 
+Allows users to create an account with the site using username, password and password confirmation. <br>
+![features signup](readme/assets/features-signup.png) <br>
+
+#### Login
+Allows users to login to the site with user credentials, which are username and password. An option to remmeber login details.A forgot password link to reset password. <br>
+![features login](readme/assets/features-login.png) <br>
+
+#### Logout 
+Upon selecting logout, users are directed to a dedicated logout page. Upon confirmation, users are redirected back to the home page <br>
+![features logout](readme/assets/features-logout.png) <br>
+
+#### Footer
+The footer displays copyright information to uphold rights to site material and protect against infringement. <br>
+![features footer](readme/assets/features-footer.png) <br>
+
+### Future Features
+### Anime Model
+An anime model to compliment the exiting models for this project that allows dropdown selection of anime titles on the review submission page. The anime model will include the title, image and release date. Access to this feature will be exclusevly available to the site admin.
+
+### Genre
+The genre tags will be integrated within the anim ereviews and users will have the ability to filter reviews based on their preferred genres.
+___
+
+

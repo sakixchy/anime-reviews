@@ -241,6 +241,7 @@ ___
 - [django-allauth](https://docs.allauth.org/en/latest/installation/quickstart.html)(User Authentication)
 - [dj3-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/)(Django storage for Cloudinary)
 - [ElephantSQL](https://www.elephantsql.com/)(PostgreSQL database hosting)
+- [Summernote](https://summernote.org/getting-started/#integration)(WYSIWYG Editor)(Not fully implemented)
 ___
-Testing
-
+## Testing
+The full manual testing is being done in an separate file, to view it click [here](TESTING.md).

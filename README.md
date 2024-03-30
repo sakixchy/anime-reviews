@@ -219,5 +219,11 @@ An anime model to compliment the exiting models for this project that allows dro
 ### Genre
 The genre tags will be integrated within the anim ereviews and users will have the ability to filter reviews based on their preferred genres.
 ___
+## Database Design
+### Database (ERD) Table
+The table was created by a website called [Lucid Chart](hhtps://www.lucidchart.com). <br>
+![erd table](readme/assets/anime-reviews-erd.png) <br>
 
-
+### CRUD
+The CRUD functionality serves as the backbone of the database relationship. Reviews utilize this functionality to Create, Read, Update, and Delete data, ensuring seamless management and manipulation of anime reviews. This allows users to interact with reviews effectively, from submitting new reviews to editing existing ones, and reading their own reviews to ultimately deleting them.
+___

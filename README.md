@@ -266,7 +266,7 @@ HTML [W3C Validator](https://validator.w3.org/) was used to check for any errors
 - Edit Review
 ![edit review html validation](readme/assets/code-validations/review-edit-html-validator.png) <br>
 - Logout
-[logout html validation](readme/assets/code-validations/logout-html-validator.png) <br>
+![logout html validation](readme/assets/code-validations/logout-html-validator.png) <br>
 
 CSS [Jigsaw](https://jigsaw.w3.org/css-validator/) <br>
 ![style css validation](readme/assets/code-validations/css-validator.png)

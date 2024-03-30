@@ -130,7 +130,7 @@ def post_comment(request, slug):
             comment.user = request.user
             comment.save()
             messages.success(request, "You have successfully"
-                             "commented on this review")
+                             " commented on this review")
             return redirect("review_detail", slug=slug)
     else:
         form = CommentForm()

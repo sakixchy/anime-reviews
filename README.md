@@ -364,4 +364,25 @@ Forking a repository allows you to create a copy of your existing repository, wh
 7. Open it and the respository will be available to work offline.
 ___
 ## Credits
+### Media 
+- Favicon taken from [here](https://freepngimg.com/png/119529-eyes-anime-hd-image-free/icon).
+- Filter button taken from [here](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:filter_alt:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=filter&icon.platform=web).
+- Alert Message Emotes taken from [here](https://kawaiiface.net/).
+- Hero Image taken from [here](https://wall.alphacoders.com/big.php?i=815183).
 
+#### Images
+All images currently presented on the website apart from the Hero image are personal to users and were uploaded by users.
+
+### Typography 
+The fonts were taken from Google Fonts.
+
+### Text
+All texts associated with reviews are written by me.
+
+### Code
+This Review Site project was inspired by Code Institute's walkthrough project titled 'I Think Therefore I Blog'.
+
+The Footer Solution found [here](https://www.youtube.com/watch?v=yc2olxLgKLk)
+___
+## Acknowledgements
+I am incredibly elated by the support received throughout this massive project, especially the invaluable mentorship provided by Ronan McClelland as well as the support from the Slack community.

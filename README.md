@@ -295,7 +295,16 @@ Python [Linter](https://pep8ci.herokuapp.com/) <br>
 ![lighthouse mobile](readme/assets/tests/lh-mobile.png) <br>
 
 ### Browser Testing
+| Browser | Layout | Functionality |
+|---------|--------|---------------|
+| Chrome  |   ✔    |       ✔       |
+| Safari  |   ✔    |       ✔       |
+| Firefox |   ✔    |       ✔       | 
 
+### Fixed Bugs
+ **Layout Issues on FIrefox**
+> - Fixed the issue by removing the code: `width:100%`from style.css for `hero-image`.
+![bug 1](readme/assets/tests/firefox-layout-bug.png) <br>
 
 
 

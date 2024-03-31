@@ -302,9 +302,14 @@ Python [Linter](https://pep8ci.herokuapp.com/) <br>
 | Firefox |   ✔    |       ✔       | 
 
 ### Fixed Bugs
- **Layout Issues on FIrefox**
-> - Fixed the issue by removing the code: `height:100%`from style.css for `hero-image`.
+ **Layout Issues on Firefox**
+> - Fixed the issue by removing the code: `height:100%` from style.css for `hero-image`.
 ![bug 1](readme/assets/tests/firefox-layout-bug.png) <br>
+
+**Server Error**
+> - When attempting to visit the site, a server error occurs preventing successful loading.
+Changed from `SECRET_KEY` to `DJANGO_SECRET_KEY` to successfully load the site.
+___
 
 
 

@@ -271,6 +271,33 @@ HTML [W3C Validator](https://validator.w3.org/) was used to check for any errors
 CSS [Jigsaw](https://jigsaw.w3.org/css-validator/) <br>
 ![style css validation](readme/assets/code-validations/css-validator.png)
 
+Python [Linter](https://pep8ci.herokuapp.com/) <br>
+- Admin
+![admin linter](readme/assets/code-validations/admin-linter.png) <br>
+- Reviews URL 
+![reviews url linter](readme/assets/code-validations/app-url-linter.png) <br>
+- Forms
+![forms linter](readme/assets/code-validations/forms-linter.png) <br>
+- Main URL
+![main url linter](readme/assets/code-validations/main-url-linter.png) <br>
+- Models
+![models linter](readme/assets/code-validations/models-linter.png) <br>
+- Settings
+![settings linter](readme/assets/code-validations/settings-linter.png) <br>
+- Views
+![views linter](readme/assets/code-validations/views-linter.png) <br>
+
+### Lighthouse
+
+- Desktop 
+![lighthouse desktop](readme/assets/tests/lh-desktop.png) <br>
+- Mobile
+![lighthouse mobile](readme/assets/tests/lh-mobile.png) <br>
+
+### Browser Testing
+
+
+
 
 
 

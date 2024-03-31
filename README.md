@@ -310,10 +310,19 @@ Python [Linter](https://pep8ci.herokuapp.com/) <br>
 > - When attempting to visit the site, a server error occurs preventing successful loading.
 Changed from `SECRET_KEY` to `DJANGO_SECRET_KEY` to successfully load the site.
 ___
+## Deployment
+### GitHub 
+The project was initiated by selecting the CI template and clicking 'Use this template' to create a new repository.
+After giving a name to the repository, development began in Gitpod, where the entire project was built.
+The project planning involved the Principals of Agile methodology. User stories were added toproject to keep track of progress.
 
-
-
-
-
-
-
+### Heroku
+The site is being hosted on Heroku. Here are the steps required to launch the application:
+1. Use the `pip freeze > requirements.txt` commmand to store the required libararies that need to be installed prior to running the app.
+2. Either Login or Create an account with Heroku. Then select `new`from the top left of dashboard, then sleect `Create new app` from the list menu. 
+3. Enter a desired name for your app, choose a region based on your location and finally click on `Create app`.
+4. Navigate over to `Settings` tab from Heroku dashboard and scroll down to `Config Vars` and click `Reveal Config Vars`.
+5. Either create or login to your `Cloudinary` account.
+6. Head over to 'Product Environment Credentials' section from dashboard on Cloudianry and locate 'API Environment Variable'.
+7. Copy the url from this point: (cloudinary://...) and paste it over to Heroku's Config Vars settings.
+8. The 'KEY' should be `CLOUDINARY_URL`and 'VALUE' `YOUR OWN URL`.

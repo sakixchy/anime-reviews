@@ -337,3 +337,31 @@ The site is being hosted on Heroku. Here are the steps required to launch the ap
 17. Scroll down to Manual Deployment section and click `Deploy`.
 18. Wait for the app to build, then click `View`.
 
+## Fork Repository
+Forking a repository allows you to create a copy of your existing repository, which enables the possibility of making changes and modifying the repository without affecting the original one.
+
+1. Choose the [repository](https://github.com/sakixchy/anime-reviews) on GitHub.
+2. Click on `Fork` button on the top-right corner of the panel.
+3. Click on `Create New Fork` to sucessfuly fork the repository.
+(Note you can't fork yourown repository unless you're in an orginazaion).
+
+## Clone Repository
+1. On the Home of the `Anime Reviews` in Github.
+2. Click on the green `Code` button.
+3. Copy the HTTPS link under Clone sub heading.
+4. Open any code editor.
+5. Type in git clone in the terminal and paste the url from earlier.
+6. Press Enter to create a local version of this repository.
+7. Download this the repository.
+
+## Download Repository
+1. On the Home of the `Anime Reviews` in Github.
+2. Click on the green `Code` button.
+3. Select `Download ZIP` at the bottom.
+4. Save the folder and extract it to desired location.
+5. Open any Code Editor.
+6. Find the repository from where it was saved on the system.
+7. Open it and the respository will be available to work offline.
+___
+## Credits
+

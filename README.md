@@ -322,7 +322,18 @@ The site is being hosted on Heroku. Here are the steps required to launch the ap
 2. Either Login or Create an account with Heroku. Then select `new`from the top left of dashboard, then sleect `Create new app` from the list menu. 
 3. Enter a desired name for your app, choose a region based on your location and finally click on `Create app`.
 4. Navigate over to `Settings` tab from Heroku dashboard and scroll down to `Config Vars` and click `Reveal Config Vars`.
-5. Either create or login to your `Cloudinary` account.
-6. Head over to 'Product Environment Credentials' section from dashboard on Cloudianry and locate 'API Environment Variable'.
-7. Copy the url from this point: (cloudinary://...) and paste it over to Heroku's Config Vars settings.
-8. The 'KEY' should be `CLOUDINARY_URL`and 'VALUE' `YOUR OWN URL`.
+5. Secure the `SECRET_KEY` by storing it in a separate file named `env.py`. Then, add `env.py` to the '.gitignore' file. Ensure to assign the value of SECRET_KEY as os.environ.get('DJANGO_SECRET_KEY') in the env.py file.
+6. Either create or login to your `Cloudinary` account.
+7. Head over to 'Product Environment Credentials' section from dashboard on Cloudianry and locate 'API Environment Variable'.
+8. Copy the url from this point: (cloudinary://...) and paste it over to Heroku's Config Vars settings.
+9. The 'KEY' should be `CLOUDINARY_URL` and 'VALUE' will be `YOUR OWN URL`.
+10. Either create or login to your Elephant SQL accoount.
+11. CLick 'Create New Instance', then give it a desired name along with choosing the 'Tiny Tutrle (Free)' plan, leave tags field empty and click 'Select Region'.
+12. A dropdown will appear with a list of data centers, from there choose that's nearest to your location and click 'Review'
+13. Copy the database `URL` from the 'Details' panel and paste it into your 'Config Vars' on Heroku.
+14. The 'KEY' should be `DATABASE_URL` and 'VALUE' will be `YOUR OWN URL`.
+15. Add `DJANGO_SECRET_KEY` to 'Config Vars'.
+16. Navigate over to Deploy tab and select the repository for deployment.
+17. Scroll down to Manual Deployment section and click `Deploy`.
+18. Wait for the app to build, then click `View`.
+
